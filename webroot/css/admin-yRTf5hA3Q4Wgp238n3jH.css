@@ -1,0 +1,115 @@
+
+
+.admin-container .config h2 {
+	margin-bottom: 20px;
+}
+
+.admin-container .config form {
+	margin-bottom: 15px;
+}
+
+.admin-container .section-flex {
+	display: flex;
+}
+
+.admin-container .section-flex section {
+	width: 50%;
+}
+
+.admin-container .section-flex section:first-child {
+	margin-right: 25px;
+}
+
+.admin-container .search {
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+.admin-container .search input {
+	margin-left: 15px;
+}
+
+.admin-container .user-list .searchUser,
+.admin-container .paquet-list .searchPaquet {
+	margin-bottom: 30px;
+}
+
+
+.admin-container .user-list,
+.admin-container .paquet-list {
+	max-height: 400px;
+	overflow-y: scroll;
+}
+
+.admin-container .user-list .user,
+.admin-container .paquet-list .paquet {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	height: auto !important;
+	margin-bottom: 15px;
+	border-radius: 10px;
+	height: 175px;
+	padding: 10px 15px;
+	color: black;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	overflow-x: scroll;
+	cursor: pointer;
+}
+
+.admin-container .user-list .user form,
+.admin-container .paquet-list .paquet form {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+
+}
+
+.admin-container .user-list .user .actions,
+.admin-container .paquet-list .paquet .actions {
+	display: flex;
+	align-items: center;
+}
+
+
+.admin-container .user-list .user .actions button,
+.admin-container .paquet-list .paquet .actions button {
+	margin-left: 10px;
+	padding: 6px;
+	border-radius: 50%;
+	transition: all .3s;
+}
+
+.admin-container .user-list .user .delete,
+.admin-container .paquet-list .paquet .delete {
+	display: flex;
+	padding: 0;
+	background: transparent;
+	border: 0;
+	color: red;
+	width: auto;
+}
+
+.admin-container .user-list .user input,
+.admin-container .paquet-list .paquet input {
+	width: 100%;
+	padding: 9px 0;
+	margin: 0 15px 0 0;
+	border: 0;
+	border-radius: 0;
+	border-bottom: 2px solid var(--main-bg-color);
+}
+
+@media screen and (max-width: 1920px) {
+	.admin-container .section-flex {
+		flex-direction: column;
+	}
+	
+	.admin-container .section-flex section {
+		width: 100%;
+	}
+}

@@ -1,0 +1,123 @@
+<main class="dashboard-container">
+    <div class="open-sidebar">
+        <span class="material-symbols-rounded">
+            apps
+        </span>
+    </div>
+    <div class="container dashboard">
+        <div class="profile">
+            <div class="profile-data">
+                <div class="personal-infos">
+                    <div class="info">
+                        <span class="name"><?= $user->name ?> <?= $user->last_name ?></span>
+                        <span class="username">@<?= $user->username ?></span>
+                        <div class="stats">
+                            <span class="stat">
+                                0 Paquets
+                                ·
+                                0 Amis
+                            </span>
+                        </div>
+                    </div>
+                    <?php
+                    if (is_null($relation)) : ?>
+                        <?php if ($user->user_uid != $user_data['user_uid']) : ?>
+                            <div class="actions">
+                                <?= $this->Form->postLink(
+                                    ' <button class="action">
+                                        <span class="material-symbols-rounded">
+                                            person_add
+                                        </span>
+                                        Ajouter en amis
+                                    </button>',
+                                    ['controller' => 'Friends', 'action' => 'request', $user->user_uid],
+                                    ['escapeTitle' => false,]
+                                ) ?>
+                            </div>
+                        <?php endif; ?>
+                    <?php else : ?>
+                        <?php if ($relation->status == 'pending') : ?>
+                            <?php if ($relation->recipient_id == $user_data['id']) : ?>
+                                <div class="actions">
+                                    <?= $this->Form->postLink(
+                                        ' <button class="action">
+                                        <span class="material-symbols-rounded">
+                                            person_add
+                                        </span>
+                                        Accepter la demande en amis
+                                    </button>',
+                                        ['controller' => 'Friends', 'action' => 'accept', $user->user_uid],
+                                        ['escapeTitle' => false,]
+                                    ) ?>
+                                    <?= $this->Form->postLink(
+                                        ' <button class="action">
+                                        <span class="material-symbols-rounded">
+                                            person_add
+                                        </span>
+                                        Refuser la demande en amis
+                                    </button>',
+                                        ['controller' => 'Friends', 'action' => 'delete', $user->user_uid],
+                                        ['escapeTitle' => false,]
+                                    ) ?>
+                                </div>
+                            <?php endif; ?>
+                        <?php else : ?>
+                            <div class="status">
+                                Vous êtes amis ensemble.
+                            </div>
+                            <div class="actions">
+                                <?= $this->Form->postLink(
+                                    ' <button class="action">
+                                        <span class="material-symbols-rounded">
+                                            person_add
+                                        </span>
+                                       Supprimer des amis
+                                    </button>',
+                                    ['controller' => 'Friends', 'action' => 'delete', $user->user_uid],
+                                    ['escapeTitle' => false,]
+                                ) ?>
+                            </div>
+                        <?php endif; ?>
+                    <?php endif; ?>
+                </div>
+                <?= $this->Html->image('/img/user_profile_pic/' . $user->profile_picture, ['class' => 'logo']) ?>
+            </div>
+        </div>
+        <section class="section-paquet profile-packets">
+            <h2 class="paquet-title">Paquets</h2>
+            <div class="scroll-menu">
+                <div class="scroll-content">
+                    <?= $cell = $this->cell('Packets::display', ['my_no_ia', $user_data["id"]]) ?>
+                </div>
+                <button class="prev-button scroll-button">
+                    <span class="material-symbols-rounded">
+                        chevron_left
+                    </span>
+                </button>
+                <button class="next-button scroll-button">
+                    <span class="material-symbols-rounded">
+                        chevron_right
+                    </span>
+                </button>
+            </div>
+        </section>
+        <section class="section-paquet profile-packets">
+            <h2 class="paquet-title">Généré avec l'IA</h2>
+            <div class="scroll-menu">
+                <div class="scroll-content">
+                    <?= $cell = $this->cell('Packets::display', ['my_ia', $user_data["id"]]) ?>
+                </div>
+                <button class="prev-button scroll-button">
+                    <span class="material-symbols-rounded">
+                        chevron_left
+                    </span>
+                </button>
+                <button class="next-button scroll-button">
+                    <span class="material-symbols-rounded">
+                        chevron_right
+                    </span>
+                </button>
+            </div>
+        </section>
+    </div>
+</main>

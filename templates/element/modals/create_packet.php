@@ -1,0 +1,30 @@
+<div class="modal" id="create-paquet">
+    <div class="modal-container">
+        <div class="modal-header">
+            <h2 class="title">Créer un paquet</h2>
+            <div class="modal-close">
+                <span class="material-symbols-rounded">
+                    close
+                </span>
+            </div>
+        </div>
+        <div class="modal-body">
+            <?= $this->Form->create(null, ['url' => ['controller' => 'Packets', 'action' => 'create'], 'type' => 'file']) ?>
+            <div class="input-group">
+                <?= $this->Form->text('name', ['id' => 'create-name', 'placeholder' => 'Nom du paquet', 'required' => true]) ?>
+                <?= $this->Form->label('create-name', 'Nom du paquet') ?>
+            </div>
+            <div class="input-group">
+                <?= $this->Form->text('description', ['id' => 'create-description', 'placeholder' => 'Description du paquet', 'required' => true]) ?>
+                <?= $this->Form->label('create-description', 'Description du paquet') ?>
+            </div>
+            <div class="search-keywords-group">
+                <?= $this->Form->text('search', ['placeholder' => 'Recherche de mots clés', 'class' => 'search-keywords']); ?>
+                <?= $this->cell('Keywords::selected', []) ?>
+            </div>
+            <?= $this->Form->hidden('ia', ['value' => 0]); ?>
+            <?= $this->Form->submit('Créer', ['name' => 'create-paquet-submit']) ?>
+            <?= $this->Form->end() ?>
+        </div>
+    </div>
+</div>
