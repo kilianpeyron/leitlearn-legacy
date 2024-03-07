@@ -1,5 +1,12 @@
 <?php foreach ($packets as $packet): ?>
-    <div class="paquet modal-btn paquet-item <?php echo $packet->ia ? 'ai-paquet' : ''; ?>" data-modal="detail-modal" data-paquet-id="<?= $packet->id ?>">
+    <div class="paquet <?php echo $display === 'dashboard' ? 'page-redirect ' : 'modal-btn '; ?>paquet-item <?php echo $packet->ia ? 'ai-paquet' : ''; ?>"
+        <?php if ($display === 'dashboard'): ?>
+            data-redirection="/packets/view/<?= $packet->id ?>"
+        <?php else: ?>
+            data-modal="detail-modal"
+            data-paquet-id="<?= $packet->id ?>"
+        <?php endif; ?>
+    >
         <div class="paquet-head">
             <h5 class="title"><?= h($packet->name) ?></h5>
             <div class="flashcards-number">

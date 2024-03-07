@@ -5,7 +5,7 @@ use Cake\View\Cell;
 
 class PacketsCell extends Cell
 {
-    public function display(string $filter, int $logged_user_id = null)
+    public function display(string $filter, int $logged_user_id = null, string $display = "base")
     {
         $query = $this->fetchTable("Packets")->find()->contain(['Flashcards', 'Users', 'Keywords']);
 
@@ -38,5 +38,6 @@ class PacketsCell extends Cell
         $packets = $query->all();
 
         $this->set('packets', $packets);
+        $this->set('display', $display);
     }
 }
