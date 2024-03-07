@@ -43,7 +43,7 @@
                 </ul>
             </div>
             <div class="paquets">
-                <?= $cell = $this->cell('Packets::display', ['my', $user_data["id"]]) ?>
+                <?= $cell = $this->cell('Packets::display', ['my', $user_data["id"], 'dashboard']) ?>
             </div>
         </section>
     </div>
