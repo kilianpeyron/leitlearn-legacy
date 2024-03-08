@@ -125,13 +125,7 @@ const animateFormButtons = () => {
         if (validateForm($form)) {
             $input.val('');
             $loader.show();
-
-            setTimeout(() => {
-                $input.val('Envoyer');
-                $loader.hide();
-
-                $form.submit();
-            }, LOADER_DURATION);
+            $form.submit();
         } else {
             alert("Veuillez remplir tous les champs requis.");
         }

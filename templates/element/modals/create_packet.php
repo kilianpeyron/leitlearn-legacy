@@ -1,4 +1,4 @@
-<div class="modal" id="create-paquet">
+<div class="modal" id="create-packet">
     <div class="modal-container">
         <div class="modal-header">
             <h2 class="title">Créer un paquet</h2>

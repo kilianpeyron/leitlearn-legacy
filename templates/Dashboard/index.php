@@ -9,13 +9,13 @@
             <div class="section-header">
                 <h1 class="part-title">Mes paquets</h1>
                 <ul class="actions">
-                    <li class="action active modal-btn" data-modal="create-paquet">
+                    <li class="action active modal-btn" data-modal="create-packet">
                         Créer un paquet
                         <span class="material-symbols-rounded">
                             add
                         </span>
                     </li>
-                    <li class="action">
+                    <li class="action modal-btn" data-modal="import-packet">
                         Importer un paquet
                         <span class="material-symbols-rounded">
                             upload_file

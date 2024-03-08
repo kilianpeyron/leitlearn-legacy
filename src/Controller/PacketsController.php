@@ -6,8 +6,12 @@ namespace App\Controller;
 use App\Utility\AppSingleton;
 use Cake\Core\Configure;
 use Cake\Datasource\Exception\RecordNotFoundException;
+use Cake\Validation\Validator;
 use DateTime;
 use DateTimeImmutable;
+use PDO;
+use PDOException;
+use ZipArchive;
 
 class PacketsController extends AppController
 {
@@ -364,5 +368,143 @@ class PacketsController extends AppController
         }
 
         return $this->redirect('/dashboard');
+    }
+
+    /**
+     * Importation d'un paquet avec un fichier
+     *
+     * @return \Cake\Http\Response|null
+     */
+    public function importViaFile(): ?\Cake\Http\Response
+    {
+        if ($this->request->is('post')) {
+            // Validation des données
+            $validator = new Validator();
+            $validator
+                ->requirePresence('name')
+                ->requirePresence('description')
+                ->notEmptyFile('uploaded_file', __('Veuillez télécharger un fichier.'));
+
+            $errors = $validator->validate($this->request->getData());
+            $data = $this->request->getData();
+
+            if (empty($errors)) {
+                $uploadedFile = $this->request->getData('uploaded_file');
+                $fileExtension = pathinfo($uploadedFile->getClientFilename(), PATHINFO_EXTENSION);
+
+                if ($fileExtension === 'csv') {
+                    $csvContent = file_get_contents($uploadedFile->getStream()->getMetadata('uri'));
+                    $csvRows = str_getcsv($csvContent, "\n"); // Séparer les lignes
+                    $csvData = [];
+                    $headerSkipped = false;
+
+                    foreach ($csvRows as $csvRow) {
+                        if (!$headerSkipped) {
+                            $headerSkipped = true;
+                            continue;
+                        }
+
+                        $csvData[] = str_getcsv($csvRow, ";"); // Séparer les colonnes
+                    }
+
+                    $packet = $this->Packets->newEmptyEntity();
+                    $data['user_id'] = $this->request->getSession()->read('Auth.id');
+                    $data['creator_id'] = $this->request->getSession()->read('Auth.id');
+                    $packet = $this->Packets->patchEntity($packet, $data);
+
+                    if ($this->Packets->save($packet)) {
+                        $packet_id = $packet->id;
+
+                        foreach ($csvData as $flashcard_data) {
+                            $flashcard = $this->Packets->Flashcards->newEntity([
+                                'packet_id' => $packet_id,
+                                'question' => $flashcard_data[0],
+                                'answer' => $flashcard_data[1],
+                            ]);
+
+                            $this->Packets->Flashcards->save($flashcard);
+                        }
+
+                        $this->Flash->error(__('Votre paquet a été crée avec succès.'));
+                        return $this->redirect(['controller' => 'Dashboard', 'action' => 'index']);
+                    } else {
+                        $this->Flash->error(__('Erreur lors de la sauvegarde du paquet.'));
+                    }
+                } elseif ($fileExtension === 'apkg') {
+                    $apkg_file_path = WWW_ROOT . 'temp_packet' . DS . $uploadedFile->getClientFilename();
+
+                    $uploadedFile->moveTo($apkg_file_path);
+                    $this->importAnkiPackage($apkg_file_path);
+                } else {
+                    $this->Flash->error(__('Format de fichier non pris en charge.'));
+                    return $this->redirect(['controller' => 'Dashboard', 'action' => 'index']);
+                }
+            } else {
+                $this->Flash->error(__('Erreur de validation.'));
+            }
+        }
+        return $this->redirect(['controller' => 'Dashboard', 'action' => 'index']);
+    }
+
+    private function importAnkiPackage($apkg_file_path)
+    {
+        $extracted_directory = WWW_ROOT . 'temp_packet' . DS;
+        $archive = new ZipArchive;
+
+        if ($archive->open($apkg_file_path) === TRUE) {
+            $archive->extractTo($extracted_directory);
+            $archive->close();
+
+            $this->apkgDatabase($extracted_directory . 'collection.anki2');
+            if (
+                file_exists($apkg_file_path)
+            ) {
+                unlink($extracted_directory .'media');
+                unlink($apkg_file_path);
+            }
+        } else {
+            $this->Flash->error(__('Échec de l\'ouverture de l\'archive .apkg.'));
+        }
+    }
+    private function apkgDatabase($database_path): ?\Cake\Http\Response
+    {
+            $pdo = new PDO('sqlite:' . $database_path);
+            $results = $pdo->query('SELECT * FROM notes');
+            $packet = $this->Packets->newEmptyEntity();
+            $data = $this->request->getData();
+
+            $data['user_id'] = $this->request->getSession()->read('Auth.id');
+            $data['creator_id'] = $this->request->getSession()->read('Auth.id');
+
+            $packet = $this->Packets->patchEntity($packet, $data);
+            if ($this->Packets->save($packet)) {
+                $packetId = $packet->id;
+
+                foreach ($results as $flashcardData) {
+                    $flashcard = explode("\x1F", $flashcardData['flds']);
+                    $question = $flashcard[0];
+                    $answer = $flashcard[1];
+
+                    $flashcard = $this->Packets->Flashcards->newEntity([
+                        'packet_id' => $packetId,
+                        'question' => $question,
+                        'answer' => $answer,
+                    ]);
+
+                    $this->Packets->Flashcards->save($flashcard);
+                }
+                if (
+                    file_exists($database_path)
+                ) {
+                    unlink($database_path);
+                }
+
+                $this->Flash->error(__('Votre paquet a été crée avec succès.'));
+            } else {
+                $this->Flash->error(__('Erreur lors de la sauvegarde du paquet.'));
+            }
+            $pdo = null;
+
+        return $this->redirect(['controller' => 'Dashboard', 'action' => 'index']);
     }
 }
