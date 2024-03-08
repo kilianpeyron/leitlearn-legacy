@@ -34,7 +34,7 @@
                 <p>Suppression du paquet</p>
                 <?= $this->Form->postLink(
                     '<button type="submit">Supprimer le paquet</button>',
-                    ['controller' => 'Paquets', 'action' => 'remove', $packet->id],
+                    ['controller' => 'Packets', 'action' => 'remove', $packet->id],
                     [
                         'confirm' => 'Êtes-vous sur de vouloir supprimer le paquet ?',
                         'escapeTitle' => false,
