@@ -7,6 +7,17 @@ use App\Utility\AppSingleton;
 
 class AiController extends AppController
 {
+    public function initialize(): void
+    {
+        parent::initialize();
+        $this->viewBuilder()->setLayout('ai');
+    }
+
+    public function index()
+    {
+
+    }
+
     /**
      * Fait une requête aux serveurs de OpenAI et récupère la réponse
      *
