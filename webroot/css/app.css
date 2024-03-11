@@ -263,8 +263,7 @@
     margin-top: 15px;
 }
 
-.modal.detail-modal .modal-body .detail .creator-infos .information .data .packet-creator{
-
+.modal.detail-modal .modal-body .detail .creator-infos .information .data .packet-creator {
     display: flex;
     align-items: center;
     margin-top: 5px;
@@ -304,7 +303,7 @@ button[type=submit],
 }
 
 .modal.detail-modal .flashcards {
-    max-height: 150px;
+    max-height: 175px;
     width: 100%;
     padding: 10px 5px;
     margin-top: 10px;
@@ -1039,7 +1038,7 @@ header .logo {
 }
 
 header .logo img {
-    width: 35px;
+    width: 45px;
     height: 45px;
     filter: drop-shadow(0 0 5px rgba(0, 0, 0, .3));
 }
@@ -1101,7 +1100,7 @@ footer button:active,
     position: relative;
     margin-top: 16px;
     padding: 0 75px;
-    overflow: hidden;
+    overflow-x: scroll;
 }
 
 .scroll-menu h2 {
@@ -1447,20 +1446,20 @@ footer button:active,
     padding: 0 15px;
 }
 
-.paquets {
+.packets {
     margin: 30px 0 50px;
 }
 
-.paquet-title {
+.packet-title {
     color: white;
     margin-top: 30px;
 }
 
-.paquets h2 {
+.packets h2 {
     margin-bottom: 15px;
 }
 
-.paquets .paquet {
+.packets .packet {
     position: relative;
     width: 250px;
     height: 150px;
@@ -1468,13 +1467,13 @@ footer button:active,
     display: flex;
 }
 
-.paquets .content {
+.packets .content {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
 }
 
-.paquets .content .paquet {
+.packets .content .packet {
     margin-right: 15px;
     margin-bottom: 15px;
     cursor: pointer;

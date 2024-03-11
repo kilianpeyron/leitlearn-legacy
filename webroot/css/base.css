@@ -318,16 +318,16 @@ form .edit-picture-group input{
 
 /* Flashcards et Paquet */
 
-.paquet {
+.packet {
     transition: all .3s;
 }
 
-.paquet:active {
+.packet:active {
     transform: scale(.98);
 }
 
-.scroll-menu .paquet,
-.paquets .content .paquet {
+.scroll-menu .packet,
+.packets .content .packet {
     position: relative;
     border-radius: 10px;
     height: 175px;
@@ -343,14 +343,14 @@ form .edit-picture-group input{
     flex-direction: column;
 }
 
-.paquet.ai-paquet {
+.packet.ai-packet {
     color: white !important;
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite !important;
 }
 
-.paquet .title {
+.packet .title {
     margin-bottom: 5px;
     max-height: 60px;
     color: black;
@@ -358,11 +358,10 @@ form .edit-picture-group input{
     overflow-y: scroll;
 }
 
-.paquet .flashcards-number,
-.paquet-header .title sup {
+.packet .flashcards-number,
+.packet-header .title sup {
     display: inline;
-    padding: 3px 6px;
-    height: 20px;
+    padding: 1px 8px;
     color: rgba(0, 0, 0, .3);
     font-weight: 500;
     font-size: 11px;
@@ -370,17 +369,27 @@ form .edit-picture-group input{
     background: rgba(0, 0, 0, .1);
 }
 
-.paquet.ai-paquet .flashcards-number {
+.packet .flashcards-number {
+    display: flex;
+    align-items: center;
+}
+
+.packet .flashcards-number span {
+    font-size: 19px;
+    margin-right: 3px;
+}
+
+.packet.ai-packet .flashcards-number {
     color: rgba(255, 255, 255, .7);
 }
 
-.paquet .paquet-head {
+.packet .packet-head {
     display: flex;
     align-items: baseline;
     flex-direction: column;
 }
 
-.paquet .author {
+.packet .author {
     position: absolute;
     bottom: 10px;
     left: 10px;
@@ -388,7 +397,7 @@ form .edit-picture-group input{
     align-items: center;
 }
 
-.paquet .author .profile-picture {
+.packet .author .profile-picture {
     width: 30px;
     height: 30px;
     background: rgba(0, 0, 0, .1);
@@ -396,16 +405,16 @@ form .edit-picture-group input{
     margin-right: 7px;
 }
 
-.paquet .author .author-name {
+.packet .author .author-name {
     font-weight: 500;
     font-size: 14px;
 }
 
-.paquet.ai-paquet .title {
+.packet.ai-packet .title {
     color: white !important;
 }
 
-.paquet.ai-paquet .ia-paquet-report {
+.packet.ai-packet .ia-packet-report {
     position: absolute;
     bottom: 5px;
     right: 10px;

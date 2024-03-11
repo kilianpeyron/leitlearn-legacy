@@ -4,7 +4,7 @@ $this->assign('title', 'Apprenez grâce aux flashcards');
 <header>
     <div class="header-content">
         <div class="logo">
-            <?= $this->Html->image('/img/leitlearn_2_logo.png', ['alt' => 'Leitlearn 2']) ?>
+            <?= $this->Html->image('/img/leitlearn_2_logo_white.png', ['alt' => 'Leitlearn 2']) ?>
         </div>
         <div class="new leitlearn-2">
             <?= $this->Html->image('/img/leitlearn_2_logo.png', ['alt' => 'Leitlearn 2']) ?>

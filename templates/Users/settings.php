@@ -58,9 +58,8 @@ $this->assign('title', 'Paramètres de compte');
             </div>
             <div class="info">
                 <p>Suppression de compte</p>
-
                 <form action="delete-account" method="post">
-                    <button type="submit" name="delete-account-submit">Supprimer compte</button>
+                    <button type="submit" name="delete-account-submit">Supprimer</button>
                 </form>
             </div>
         </div>

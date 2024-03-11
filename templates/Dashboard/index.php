@@ -22,7 +22,7 @@ $this->assign('title', 'Mon dashboard');
                     </li>
                 </ul>
             </div>
-            <div class="paquets">
+            <div class="packets">
                 <?= $cell = $this->cell('Packets::display', ['my', $user_data["id"], 'dashboard']) ?>
             </div>
         </section>
