@@ -33,7 +33,7 @@ const modalEventHandler = () => {
 };
 
 const fetchPacketDataThenUpdateModal = () => {
-    $('.paquet-item').click(async function () {
+    $('.packet-item').click(async function () {
         const paquet = $(this);
         const paquetId = paquet.data('paquet-id');
 
@@ -75,9 +75,9 @@ const updateModalContent = (data) => {
     if (data.flashcards && data.flashcards.length > 0) {
         var flashcardElements = $.map(data.flashcards, function (flashcard, index) {
             return $('<div>').addClass('flashcard').append(
-                $('<div>').addClass('question').text(flashcard.question),
+                $('<div>').addClass('question').html(flashcard.question),
                 $('<div>').addClass('answer').append(
-                    $('<div>').addClass('content show').text(flashcard.answer)
+                    $('<div>').addClass('content show').html(flashcard.answer)
                 ),
                 $('<div>').addClass('import-actions').append(
                     $('<div>').addClass('action').append(

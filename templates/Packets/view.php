@@ -4,7 +4,7 @@ $this->assign('title', $packet->name);
 <main class="dashboard-container">
     <?= $this->element('dashboard_fixed_mobile') ?>
     <div class="container dashboard">
-        <div class="paquet-header">
+        <div class="packet-header">
             <h1 class="title">
                 <?= $packet->name ?>
                 <sup>ID: <?= $packet->id ?></sup>

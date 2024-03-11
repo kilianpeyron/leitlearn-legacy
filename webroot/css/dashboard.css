@@ -177,7 +177,7 @@ main {
 }
 
 .dashboard .part-title {
-    font-size: 30px;
+    font-size: 30px !important;
     font-weight: 600;
     margin-bottom: 15px;
 }
@@ -550,7 +550,7 @@ main {
     transform: scale(0.98);
 }
 
-.dashboard .paquets {
+.dashboard .packets {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -558,12 +558,12 @@ main {
     margin-bottom: 0;
 }
 
-.dashboard .paquets a {
+.dashboard .packets a {
     color: black;
     text-decoration: none;
 }
 
-.dashboard .paquets .paquet {
+.dashboard .packets .packet {
     position: relative;
     border-radius: 10px;
     height: 175px;
@@ -573,7 +573,7 @@ main {
     cursor: pointer;
 }
 
-.dashboard .paquets .paquet {
+.dashboard .packets .packet {
     padding: 10px 12px;
     justify-content: flex-start;
 }
@@ -582,15 +582,15 @@ main {
     font-size: 21px;
 }
 
-.dashboard .paquets .paquet .actions {
+.dashboard .packets .packet .actions {
     position: absolute;
     top: 10px;
     right: 7px;
 }
 
-.dashboard .paquets .paquet.ai-paquet .title,
-.dashboard .paquets .paquet.ai-paquet .action,
-.dashboard .paquets .paquet.ai-paquet .flashcards-number {
+.dashboard .packets .packet.ai-packet .title,
+.dashboard .packets .packet.ai-packet .action,
+.dashboard .packets .packet.ai-packet .flashcards-number {
     color: white;
 }
 
@@ -637,7 +637,7 @@ main {
     margin-right: 0;
 }
 
-.paquet-header {
+.packet-header {
     display: flex;
     align-items: center;
     margin: 10px 0 20px;
@@ -645,7 +645,7 @@ main {
     border-bottom: 1px solid rgba(0, 0, 0, .125);
 }
 
-.paquet-header .title {
+.packet-header .title {
     display: flex;
     margin-bottom: 0;
     max-width: 400px;
@@ -653,29 +653,29 @@ main {
     overflow: hidden;
 }
 
-.paquet-header .title sup {
+.packet-header .title sup {
     margin-left: 5px;
     width: 50px;
     text-align: center;
 }
 
-.paquet-header .actions {
+.packet-header .actions {
     display: flex;
     align-items: center;
     margin-left: auto;
 }
 
-.paquet-header .actions #remainingTime {
+.packet-header .actions #remainingTime {
     color: black;
     font-weight: 500;
     text-align: center;
 }
 
-.paquet-header .hidden {
+.packet-header .hidden {
     display: none;
 }
 
-.paquet-header .actions .action,
+.packet-header .actions .action,
 .infos .infos-title .edit {
     display: flex;
     align-items: center;
@@ -689,7 +689,7 @@ main {
     border-radius: 25px;
 }
 
-.paquet-header .actions .action.play,
+.packet-header .actions .action.play,
 .packet-actions .action {
     width: auto;
     height: auto;
@@ -698,18 +698,18 @@ main {
     color: black;
 }
 
-.paquet-header .actions .action.play.hidden,
+.packet-header .actions .action.play.hidden,
 .game .action-btn.next.hidden {
     display: none;
 }
 
-.paquet-header .actions .action:hover,
+.packet-header .actions .action:hover,
 .infos .infos-title .edit:hover {
     transform: scale(1);
     transform: translateY(-5px);
 }
 
-.paquet-header .actions .action.play span {
+.packet-header .actions .action.play span {
     margin-left: 7px;
 }
 
@@ -899,6 +899,7 @@ main {
     font-weight: 500;
     cursor: pointer;
     border-radius: 10px;
+    overflow-x: scroll;
     transition: all ease 0.3s;
 }
 
@@ -1148,7 +1149,7 @@ main {
     color: rgba(0, 0, 0, .3);
 }
 
-.dashboard .profile-packets .paquet-title {
+.dashboard .profile-packets .packet-title {
     color: black;
 }
 
@@ -1278,27 +1279,27 @@ main {
         font-size: 25px;
     }
 
-    .paquet-header .actions .action,
+    .packet-header .actions .action,
     .infos .infos-title .edit {
         width: 30px;
         height: 30px;
     }
 
-    .paquet-header .actions .action span {
+    .packet-header .actions .action span {
         font-size: 20px;
     }
 
-    .paquet-header .actions .action.play {
+    .packet-header .actions .action.play {
         padding: 3px 8px;
     }
 }
 
 @media screen and (max-width: 750px) {
-    .paquet-header .title {
+    .packet-header .title {
         font-size: 20px;
     }
 
-    .paquet-header .title sup {
+    .packet-header .title sup {
         display: none;
     }
 
@@ -1316,11 +1317,11 @@ main {
         padding: 20px 20px 20px 90px;
     }
 
-    .paquet-header .title {
+    .packet-header .title {
         font-size: 20px;
     }
 
-    .paquet-header .title sup {
+    .packet-header .title sup {
         display: none;
     }
 }
@@ -1369,6 +1370,10 @@ main {
 
     .dashboard-sidebar .user {
         bottom: 85px;
+    }
+
+    .dashboard .packets .packet .title {
+        font-size: 18px;
     }
 
     .dashboard .flashcard form {
