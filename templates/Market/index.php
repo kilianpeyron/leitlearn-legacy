@@ -39,6 +39,12 @@ $this->assign('title', 'Marché');
                 </button>
             </div>
         </section>
+        <section>
+            <h2 class="paquet-title">Catégories</h2>
+            <div class="categories">
+                <?= $cell = $this->cell('Keywords::display', []) ?>
+            </div>
+        </section>
         <section class="section-paquet">
             <h2 class="paquet-title">Les plus importés</h2>
             <div class="scroll-menu">

@@ -1,5 +1,5 @@
 import {api} from "../api.js";
-import {updateExploreResults} from "./explore.js";
+// import {updateExploreResults} from "./explore.js";
 
 export const initDecks = () => {
     fetchDecksFromExplore();
