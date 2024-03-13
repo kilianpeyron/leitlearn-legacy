@@ -1271,7 +1271,6 @@ footer button:active,
 .scroll-menu {
     position: relative;
     margin-top: 16px;
-    padding: 0 75px;
     overflow-x: scroll;
 }
 
@@ -1309,40 +1308,9 @@ footer button:active,
     margin-right: 0;
 }
 
-.scroll-button {
-    position: absolute;
-    top: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transform: translateY(-50%);
-    height: 100%;
-    color: white;
-    background: transparent;
-    border: none;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.scroll-button span {
-    font-size: 45px;
-    filter: drop-shadow(0 0 7px black);
-}
-
-.prev-button {
-    left: 0;
-    background: linear-gradient(270deg, transparent, black);
-}
-
-.next-button {
-    right: 00;
-    background: linear-gradient(270deg, black, transparent);
-}
-
 .container {
     position: relative;
-    padding: 30px 500px 0;
-    margin-top: 30px;
+    padding: 0 500px;
 }
 
 /* Styles pour la section de présentation */
@@ -1614,9 +1582,138 @@ footer button:active,
 
 /* Styles pour la page marché */
 
-.section-paquet {
-    padding: 0 15px;
+section.me {
+    position: relative;
+    width: 100%;
+    padding: 25px;
+    background-color: #fce043;
+    background-image: linear-gradient(315deg, #fce043 0%, #fb7ba2 74%);
+    border-radius:  0 0 10px 10px;
+}
+
+section.me .filter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .8);
+}
+
+section.me .section-header {
+    position: relative;
+    margin-bottom: 40px;
+    z-index: 2;
+}
+
+section.me .profile {
+    display: flex;
+    align-items: center;
+}
+
+section.me .profile .profile-picture {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+    border-radius: 50%;
+    background: white;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+section.me .profile .text {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    font-weight: 500;
+}
+
+section.me .profile .text span {
+    color: rgba(255, 255, 255, .7);
+}
+
+section.me .profile .text h2 {
+    font-size: 30px;
+}
+
+section.search {
+    margin: 10px 0 25px;
+}
+
+section.search .search-input {
+    position: relative;
+}
+
+section.search .search-input label {
+    position: absolute;
+    top: 50%;
+    left: 13px;
+    transform: translateY(-50%);
+    display: flex;
+    color: rgba(255, 255, 255, .7);
+}
+
+section.search .search-input input {
+    width: 400px;
+    padding: 13px 0 13px 45px;
+    background: #111111;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    color: rgba(255, 255, 255, .7);
+}
+
+section.search .search-input input:focus,
+section.search .search-input input:active {
+    outline: none;
+    border: 1px solid rgba(255, 255, 255, .4);
+}
+
+.section-packets {
     margin-bottom: 30px;
+}
+
+.section-header {
+    display: flex;
+    align-items: normal;
+}
+
+.section-header .scroll-buttons {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.section-header .scroll-buttons .scroll-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    margin-left: 10px;
+    color: white;
+    background: black;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, .125);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.section-header .scroll-buttons .scroll-button:hover {
+    background: rgba(255, 255, 255, .125);
+}
+
+.section-header .scroll-buttons .scroll-button:active {
+    transform: scale(.95);
+}
+
+.section-header .scroll-buttons .scroll-button span {
+    font-size: 30px;
+}
+
+
+.section-header .scroll-buttons .scroll-button:first-child {
+    margin-left: 0;
 }
 
 .packets {
@@ -1713,7 +1810,7 @@ footer .footer-content {
     justify-content: center;
     align-items: center;
     height: 350px;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
     background-image: url('/img/leitlearn_footer_bg.jpg');
     background-size: cover;
     background-position: center center;
@@ -1888,19 +1985,19 @@ footer .footer-data .copyright img {
 
 @media screen and (max-width: 2200px) {
     .container {
-        padding: 30px 400px 0;
+        padding: 0 400px;
     }
 }
 
 @media screen and (max-width: 1920px) {
     .container {
-        padding: 30px 100px 0;
+        padding: 0 100px;
     }
 }
 
 @media screen and (max-width: 1560px) {
     .container {
-        padding: 30px 30px 0;
+        padding: 0 30px;
     }
 
     footer .footer-content .footer-desc {
@@ -2043,18 +2140,13 @@ footer .footer-data .copyright img {
         color: white;
     }
 
-    .subsidebar.show {
-        left: 0;
-    }
 
-    .sidebar,
-    .subsidebar {
+    .sidebar {
         background: #111111 !important;
     }
 
     .sidebar ul li span,
-    .sidebar ul li.active span,
-    .sidebar.subsi-active ul li.active span {
+    .sidebar ul li.active span {
         color: white !important;
     }
 
@@ -2068,35 +2160,6 @@ footer .footer-data .copyright img {
         color: black !important;
     }
 
-    .subsidebar .subsidebar-header h2 {
-        color: white;
-    }
-
-;
-
-    .subsidebar.dash {
-        background: white !important;
-        border-right: 1px solid rgba(0, 0, 0, .075);
-    }
-
-    .subsidebar.dash .subsidebar-header h2 {
-        color: black;
-    }
-
-    .subsidebar .paquet-filter .filter-options .filter-btn {
-        background: white !important;
-        color: black !important;
-    }
-
-    .subsidebar .paquet-filter .filter-options .filter-btn.active,
-    .subsidebar .filters .filter-submit {
-        background: var(--main-bg-color) !important;
-        color: black !important;
-    }
-
-    .subsidebar .paquet-search {
-        background: white;
-    }
 
     .modal .modal-container {
         width: 500px !important;
@@ -2120,10 +2183,6 @@ footer .footer-data .copyright img {
 
     main {
         margin-left: 0 !important;
-    }
-
-    footer {
-        margin-bottom: 60px;
     }
 
     header {
@@ -2163,8 +2222,17 @@ footer .footer-data .copyright img {
         margin: 0;
     }
 
+    section.me .profile .profile-picture {
+        width: 60px;
+        height: 60px;
+    }
+
+    section.me .profile .text h2 {
+        font-size: 20px;
+    }
+
     footer {
-        margin: 0 0 80px;
+        margin: 0 0 50px;
     }
 }
 
@@ -2193,6 +2261,10 @@ footer .footer-data .copyright img {
 
     .modal .modal-container .modal-body select {
         padding: 10px;
+    }
+
+    section.search .search-input input {
+        width: 300px;
     }
 }
 
@@ -2246,10 +2318,6 @@ footer .footer-data .copyright img {
     .container {
         padding: 0 15px;
     }
-
-    .landing-container {
-        padding: 15px 15px 0;
-    }
 }
 
 @media screen and (max-width: 430px) {
@@ -2259,6 +2327,27 @@ footer .footer-data .copyright img {
 
     .fixed-infos span.badge {
         display: none;
+    }
+
+    .categories .category {
+        width: 120px;
+        height: 70px;
+        margin: 0 15px 15px 0;
+        padding: 5px;
+        word-break: break-word;
+    }
+
+    .categories .category .title {
+        font-size: 14px;
+    }
+
+    .categories .category .icon {
+        width: 25px;
+        height: 25px;
+    }
+
+    .categories .category .icon span {
+        font-size: 20px;
     }
 }
 
