@@ -1,15 +1,16 @@
 <?php foreach ($keywords as $category) : ?>
 <?php
     echo $this->Html->link(
-    '<div class="explore-category">
-        <div class="icon">
-            <span class="material-symbols-rounded"></span>
-        </div>
-        <span class="name">'.$category->word.'</span>
-    </div>',
+    '<div class="category" style="background: '. $category->bg .'">
+                    <span class="title">'. $category->word .'</span>
+                    <div class="icon" style="background: '. $category->fill .'">
+                        <span class="material-symbols-rounded" style="color: '. $category->bg .'">
+                            '. $category->icon .'
+                        </span>
+                    </div>
+                </div>',
     '/explore/p/'.$category->word,
     ['escapeTitle' => false],
     );
     ?>
-
 <?php endforeach; ?>
