@@ -147,6 +147,17 @@ return function (RouteBuilder $routes): void {
             ->setPass(['id']);
 
         $builder->connect(
+            '/flashcard/get/{id}',
+            ['controller' => 'Flashcards', 'action' => 'get']
+        )
+            ->setPatterns(
+                [
+                    'id' => '\d+',
+                ]
+            )
+            ->setPass(['id']);
+
+        $builder->connect(
             '/users/get/{query}',
             ['controller' => 'Users', 'action' => 'get']
         )

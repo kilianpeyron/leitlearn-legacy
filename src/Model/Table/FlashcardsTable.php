@@ -67,13 +67,11 @@ class FlashcardsTable extends Table
 
         $validator
             ->scalar('question')
-            ->maxLength('question', 255)
             ->requirePresence('question', 'create')
             ->notEmptyString('question');
 
         $validator
             ->scalar('answer')
-            ->maxLength('answer', 255)
             ->requirePresence('answer', 'create')
             ->notEmptyString('answer');
 

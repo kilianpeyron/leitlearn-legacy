@@ -47,36 +47,41 @@ class FlashcardsController extends AppController
     /**
      * Modification d'une flashcard
      *
-     * @param int $id
      * @return \Cake\Http\Response|null
      */
-    public function edit(int $id): ?Response
+    public function edit(): ?Response
     {
-        $flashcard = $this->Flashcards->find()
-            ->where(['id' => $id])
-            ->firstOrFail(); // Problème si n'existe pas
-
 
         if ($this->request->is(['post', 'put'])) {
             $valid = true;
             $user_id = $this->request->getSession()->read('Auth.id');
+            $data = $this->request->getData();
+            $flashcard_id = $data['flashcard_id'];
+
+            $flashcard = $this->Flashcards->find()
+                ->where(['id' => $flashcard_id])
+                ->first();
 
             if (
-                !$this->matchUserWithPacket($user_id, $flashcard->packet_id)
+                $flashcard === null
+                || !$this->matchUserWithPacket($user_id, $flashcard->packet_id)
                 || !$this->flashcardInPacket($flashcard->id, $flashcard->packet_id)
+                || $data['question'] == '<p><br></p>'
+                || $data['answer'] == '<p><br></p>'
             ) {
                 $valid = false;
             }
 
             if ($valid) {
-                $flashcard = $this->Flashcards->patchEntity($flashcard, $this->request->getData());
+                $data['id'] = $flashcard_id;
+                $flashcard = $this->Flashcards->patchEntity($flashcard, $data);
                 if ($this->Flashcards->save($flashcard)) {
-                    $this->Flash->success('Vos flashcards ont été modifié avec succès.');
+                    $this->Flash->success('Flashcard modifié avec succès.');
 
                     return $this->redirect('/packets/view/' . $flashcard->packet_id);
                 }
             } else {
-                $this->Flash->error('Une erreur s\'est produite lors de la modification des flashcards.');
+                $this->Flash->error('Une erreur s\'est produite lors de la modification de la flashcard.');
             }
         }
 
@@ -240,6 +245,20 @@ class FlashcardsController extends AppController
         }
 
         return $this->redirect('/packets/view/' . $packet->id);
+    }
+
+    /**
+     * Permet d'envoyer les données de la flashcard
+     *
+     * @param int $id
+     * @return \Cake\Http\Response
+     */
+    public function get(int $id)
+    {
+        $this->response = $this->response->withType('application/json');
+        $flashcard = $this->Flashcards->get($id);
+
+        return $this->response->withStringBody(json_encode($flashcard));
     }
 
     /**

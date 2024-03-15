@@ -21,11 +21,11 @@ class FlashcardsFixture extends TestFixture
             [
                 'id' => 1,
                 'packet_id' => 1,
-                'question' => 'Lorem ipsum dolor sit amet',
-                'answer' => 'Lorem ipsum dolor sit amet',
+                'question' => 'Lorem ipsum dolor sit amet, aliquet feugiat. Convallis morbi fringilla gravida, phasellus feugiat dapibus velit nunc, pulvinar eget sollicitudin venenatis cum nullam, vivamus ut a sed, mollitia lectus. Nulla vestibulum massa neque ut et, id hendrerit sit, feugiat in taciti enim proin nibh, tempor dignissim, rhoncus duis vestibulum nunc mattis convallis.',
+                'answer' => 'Lorem ipsum dolor sit amet, aliquet feugiat. Convallis morbi fringilla gravida, phasellus feugiat dapibus velit nunc, pulvinar eget sollicitudin venenatis cum nullam, vivamus ut a sed, mollitia lectus. Nulla vestibulum massa neque ut et, id hendrerit sit, feugiat in taciti enim proin nibh, tempor dignissim, rhoncus duis vestibulum nunc mattis convallis.',
                 'media' => 'Lorem ipsum dolor sit amet',
                 'leitnerFolder' => 1,
-                'modified' => '2024-02-22 10:02:44',
+                'modified' => '2024-03-15 12:05:31',
             ],
         ];
         parent::init();

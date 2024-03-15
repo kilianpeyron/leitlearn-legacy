@@ -65,6 +65,7 @@ echo $this->fetch('content');
 <?php
 echo $this->element('modals/detail_packet');
 echo $this->element('modals/create_flashcard');
+echo $this->element('modals/modify_flashcard');
 echo $this->element('modals/modify_packet');
 ?>
 
