@@ -212,7 +212,7 @@ $this->assign('title', $packet->name);
                                     </span>
                                     <div class="dropdown-menu">
                                         <ul>
-                                            <li>
+                                            <li class="flashcard-item" data-flashCard-id="<?= $flashcard->id ?>">
                                                 <span class="material-symbols-rounded">
                                                     edit_note
                                                 </span>

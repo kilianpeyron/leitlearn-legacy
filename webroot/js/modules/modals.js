@@ -1,7 +1,8 @@
 import { api } from '../api.js';
 export const initModals = () => {
     modalEventHandler();
-    fetchPacketDataThenUpdateModal(); // Récupération des infos d'un paquet cliqué
+    fetchPacketDataThenUpdateModal();
+    fetchFlashcardDataThenUpdateModal();
 };
 
 const modalEventHandler = () => {
@@ -108,3 +109,30 @@ const updateModalContent = (data) => {
     creatorPacket.find('img').attr('src', '/img/user_profile_pic/' + creator.profile_picture);
 };
 
+
+const fetchFlashcardDataThenUpdateModal = () => {
+    $('.flashcard-item').click(async function () {
+        const flashcard = $(this);
+        const flashcardId = flashcard.data('flashcard-id');
+
+        try {
+            const data = await api('/api/flashcard/get/', flashcardId);
+            console.log(data);
+            $('#modify-flashcard').addClass('show');
+            updateModalFlashcardContent(data);
+        } catch (error) {
+            console.error('Une erreur est survenue lors de la gestion du modal :', error);
+        }
+    });
+}
+
+const updateModalFlashcardContent = (data) => {
+    let editor_front = document.getElementById('editor-modify-flashcard-front');
+    let editor_back = document.getElementById('editor-modify-flashcard-back');
+    let  text_area_front = editor_front.getElementsByClassName('ql-editor')[0];
+    let  text_area_back = editor_back.getElementsByClassName('ql-editor')[0];
+    let input_flashcard_id = document.querySelector('input[name="flashcard_id"]');
+    text_area_front.innerHTML = data.question;
+    text_area_back.innerHTML = data.answer;
+    input_flashcard_id.value = data.id;
+}
