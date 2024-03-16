@@ -69,6 +69,17 @@ return function (RouteBuilder $routes): void {
         $builder->connect('/pages/*', 'Pages::display');
 
         $builder->connect(
+            '/deck/{deck_uid}',
+            ['controller' => 'Packets', 'action' => 'view']
+        )
+            ->setPatterns(
+                [
+                    'deck_uid' => '[a-z0-9\-]+',
+                ]
+            )
+            ->setPass(['deck_uid']);
+
+        $builder->connect(
             '/market/{category}',
             ['controller' => 'Market', 'action' => 'category']
         )

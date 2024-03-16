@@ -72,6 +72,12 @@ class PacketsTable extends Table
     public function validationDefault(Validator $validator): Validator
     {
         $validator
+            ->scalar('packet_uid')
+            ->maxLength('packet_uid', 32)
+            ->requirePresence('packet_uid', 'create')
+            ->notEmptyString('packet_uid');
+
+        $validator
             ->scalar('name')
             ->maxLength('name', 255)
             ->requirePresence('name', 'create')

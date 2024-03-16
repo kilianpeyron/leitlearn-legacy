@@ -1,7 +1,7 @@
 <?php foreach ($packets as $packet): ?>
     <div class="packet <?php echo $display === 'dashboard' ? 'page-redirect ' : 'modal-btn '; ?>packet-item <?php echo $packet->ia ? 'ai-packet' : ''; ?>"
         <?php if ($display === 'dashboard'): ?>
-            data-redirection="/packets/view/<?= $packet->id ?>"
+            data-redirection="/deck/<?= $packet->packet_uid ?>"
         <?php else: ?>
             data-modal="detail-modal"
             data-paquet-id="<?= $packet->id ?>"

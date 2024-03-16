@@ -20,22 +20,23 @@ class FlashcardsController extends AppController
     {
         if ($this->request->is('post')) {
             $valid = true;
-            $packet = $this->Flashcards->find()->select('packet_id')->where(['id' => $id])->first();
+            $flashcard = $this->Flashcards->get($id);
+            $packet = $this->Flashcards->Packets->find()->where(['id' => $flashcard->packet_id])->first();
             $user_id = $this->request->getSession()->read('Auth.id');
 
-            if (!$this->matchUserWithPacket($user_id, $packet->packet_id)) {
+            if (!$this->matchUserWithPacket($user_id, $packet->packet_uid)) {
                 $valid = false;
             }
 
             if ($valid) {
-                if ($this->Flashcards->find()->where(['packet_id' => $packet->packet_id])->count() > 1) {
-                    $this->Flashcards->deleteAll(['id' => $id, 'packet_id' => $packet->packet_id]);
+                if ($this->Flashcards->find()->where(['packet_id' => $packet->id])->count() > 1) {
+                    $this->Flashcards->deleteAll(['id' => $id, 'packet_id' => $packet->id]);
                     $this->Flash->success('Votre flashcards a été supprimé avec succès.');
                 } else {
                     $this->Flash->error('Une erreur s\'est produite lors de la suppression de la flashcards.');
                 }
 
-                return $this->redirect('/packets/view/' . $packet->packet_id);
+                return $this->redirect('/deck/' . $packet->packet_uid);
             } else {
                 $this->Flash->error('Une erreur s\'est produite lors de la suppression de la flashcards.');
             }
@@ -49,7 +50,7 @@ class FlashcardsController extends AppController
      *
      * @return \Cake\Http\Response|null
      */
-    public function edit(): ?Response
+    public function edit(int $packet_id): ?Response
     {
 
         if ($this->request->is(['post', 'put'])) {
@@ -62,10 +63,12 @@ class FlashcardsController extends AppController
                 ->where(['id' => $flashcard_id])
                 ->first();
 
+            $packet = $this->Flashcards->Packets->get($packet_id);
+
             if (
                 $flashcard === null
-                || !$this->matchUserWithPacket($user_id, $flashcard->packet_id)
-                || !$this->flashcardInPacket($flashcard->id, $flashcard->packet_id)
+                || !$this->matchUserWithPacket($user_id, $packet->packet_uid)
+                || !$this->flashcardInPacket($flashcard->id, $packet->id)
                 || $data['question'] == '<p><br></p>'
                 || $data['answer'] == '<p><br></p>'
             ) {
@@ -78,7 +81,7 @@ class FlashcardsController extends AppController
                 if ($this->Flashcards->save($flashcard)) {
                     $this->Flash->success('Flashcard modifié avec succès.');
 
-                    return $this->redirect('/packets/view/' . $flashcard->packet_id);
+                    return $this->redirect('/deck/' . $packet->packet_uid);
                 }
             } else {
                 $this->Flash->error('Une erreur s\'est produite lors de la modification de la flashcard.');
@@ -93,73 +96,34 @@ class FlashcardsController extends AppController
      *
      * @return \Cake\Http\Response|null
      */
-    public function create(): ?Response
+    public function create(int $packet_id): ?Response
     {
         $flashcard = $this->Flashcards->newEmptyEntity();
 
         if ($this->request->is(['post', 'put'])) {
             $valid = true;
-            $packet_id = (int)$this->request->getData()['packet_id'];
+            $packet = $this->Flashcards->Packets->get($packet_id);
+            $data = $this->request->getData();
 
-            if (!$this->matchUserWithPacket(AppSingleton::getUser($this->request->getSession())->id, $packet_id)) {
+            if (!$this->matchUserWithPacket(AppSingleton::getUser($this->request->getSession())->id, $packet->packet_uid)) {
                 $valid = false;
             }
 
             if ($valid) {
-                $flashcard = $this->Flashcards->patchEntity($flashcard, $this->request->getData());
+                $data['packet_id'] = $packet->id;
+                $flashcard = $this->Flashcards->patchEntity($flashcard, $data);
 
                 if ($this->Flashcards->save($flashcard)) {
-                    $this->Flash->success('Votre flashcards a été crée avec succès.');
+                    $this->Flash->success('Votre carte a été crée avec succès.');
                 } else {
-                    $this->Flash->success('Une erreur s\'est produite lors de la création de la flashcard.');
+                    $this->Flash->success('Une erreur s\'est produite lors de la création de la carte.');
                 }
             } else {
-                $this->Flash->success('Une erreur s\'est produite lors de la création de la flashcard.');
+                $this->Flash->success('Une erreur s\'est produite lors de la création de la carte.');
             }
         }
 
-        return $this->redirect('/packets/view/' . $packet_id);
-    }
-
-    /**
-     * Reverse les flashcards
-     *
-     * @param int $id
-     * @return \Cake\Http\Response|null
-     */
-    public function reverse(int $id): ?Response
-    {
-        if ($this->request->is('post')) {
-            $valid = true;
-
-            if (!$this->matchUserWithPacket(AppSingleton::getUser($this->request->getSession())->id, $id)) {
-                $valid = false;
-            }
-
-            if ($valid) {
-                $flashcards = $this->Flashcards->find()->where(['packet_id' => $id])->toArray();
-
-                foreach ($flashcards as $flashcard) {
-                    $flashcard_id = $flashcard->id;
-                    $question = $flashcard->question;
-                    $answer = $flashcard->answer;
-
-                    $flashcard = $this->Flashcards->get($flashcard_id);
-                    $flashcard->question = $answer;
-                    $flashcard->answer = $question;
-
-                    $this->Flashcards->save($flashcard);
-                }
-
-                $this->Flash->success('Vos flashcards ont été modifié avec succès.');
-
-                return $this->redirect('/packets/view/' . $id);
-            } else {
-                $this->Flash->error('Une erreur s\'est produite lors de la modification des flashcards.');
-            }
-        }
-
-        return $this->redirect('/dashboard');
+        return $this->redirect('/deck/' . $packet->packet_uid);
     }
 
     /**
@@ -218,7 +182,7 @@ class FlashcardsController extends AppController
 
             if (
                 empty($this->request->getData()['flashcards'])
-                || !$this->matchUserWithPacket(AppSingleton::getUser($this->request->getSession())->id, $packet->id)
+                || !$this->matchUserWithPacket(AppSingleton::getUser($this->request->getSession())->id, $packet->packet_uid)
             ) {
                 $valid = false;
             }
@@ -252,7 +216,7 @@ class FlashcardsController extends AppController
             }
         }
 
-        return $this->redirect('/packets/view/' . $packet->id);
+        return $this->redirect('/deck/' . $packet->packet_uid);
     }
 
     /**
@@ -289,16 +253,16 @@ class FlashcardsController extends AppController
      * Vérifie si un utilisateur est le propriétaire du paquet
      *
      * @param int $user_id
-     * @param int $packet_id
+     * @param string $packet_uid
      * @return bool
      */
-    public function matchUserWithPacket(int $user_id, int $packet_id): bool
+    public function matchUserWithPacket(int $user_id, string $packet_uid): bool
     {
         return $this->Flashcards->Packets->find()
                 ->select()
                 ->where([
                     'user_id' => $user_id,
-                    'id' => $packet_id,
+                    'packet_uid' => $packet_uid,
                 ])
                 ->count() >= 1;
     }
