@@ -1,6 +1,6 @@
 <?php foreach ($packets as $packet): ?>
     <div class="packet protected packet-item page-redirect <?php echo $packet->ia ? 'ai-packet' : ''; ?>"
-         data-redirection="/packets/view/<?= $packet->id ?>"
+         data-redirection="/deck/<?= $packet->packet_uid ?>"
     >
         <div class="hidden">
             <span class="material-symbols-rounded">

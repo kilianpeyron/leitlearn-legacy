@@ -9,6 +9,7 @@ use Cake\ORM\Entity;
  * Packet Entity
  *
  * @property int $id
+ * @property string $packet_uid
  * @property string $name
  * @property string|null $description
  * @property \Cake\I18n\DateTime|null $created
@@ -35,6 +36,7 @@ class Packet extends Entity
      * @var array<string, bool>
      */
     protected array $_accessible = [
+        'packet_uid' => true,
         'name' => true,
         'description' => true,
         'created' => true,

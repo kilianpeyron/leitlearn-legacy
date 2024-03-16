@@ -11,10 +11,9 @@
         <div class="modal-body">
             <?php echo $this->Form->create(
                 null,
-                ['url' => ['controller' => 'Flashcards', 'action' => 'edit','flashcard' ]]
+                ['url' => ['controller' => 'Flashcards', 'action' => 'edit', $packet->id]]
             ); ?>
             <?php echo $this->Form->hidden('flashcard_id'); ?>
-            <?php echo $this->Form->hidden('packet_id', ['value' => $packet->id]); ?>
             <div class="input-group front modify">
                 <span class="title">Recto de la carte</span>
                 <div class="text-area" id="editor-modify-flashcard-front"></div>

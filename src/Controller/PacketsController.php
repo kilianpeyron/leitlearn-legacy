@@ -16,16 +16,21 @@ use ZipArchive;
 class PacketsController extends AppController
 {
 
-    public function view(int $id)
+    public function view(string $packet_uid)
     {
 
         $this->viewBuilder()->setLayout('play');
 
         $logged_user_uid = AppSingleton::getUser($this->request->getSession())->user_uid;
-        $packet_id = htmlspecialchars((string)$id);
+        $packet_uid = htmlspecialchars((string)$packet_uid);
 
         try {
-            $packet = $this->Packets->get($id, ['contain' => ['Flashcards', 'Keywords', 'Users']]);
+            $packet = $this->Packets
+                ->find()
+                ->contain(['Flashcards', 'Keywords', 'Users'])
+                ->where(['packet_uid' => $packet_uid])
+                ->first();
+            ;
         } catch (RecordNotFoundException $e) {
             // Si le paquet n'est pas trouvé on redirige vers dashboard
             return $this->redirect(['controller' => 'Dashboard', 'action' => 'index']);
@@ -41,7 +46,7 @@ class PacketsController extends AppController
         if($flashcards_numb != 0) {
             $all_appearances = $this->Packets->Flashcards->find()
                 ->select('modified')
-                ->where(['packet_id' => $packet_id])
+                ->where(['packet_id' => $packet->id])
                 ->groupBy('modified')
                 ->limit(1)
                 ->first();
@@ -302,8 +307,9 @@ class PacketsController extends AppController
             $data = $this->request->getData();
 
             // Créateur du paquet
-            $data['user_id'] = $this->request->getSession()->read('Auth.id');;
-            $data['creator_id'] = $this->request->getSession()->read('Auth.id');;
+            $data['packet_uid'] = $this->generatePacketsUID();
+            $data['user_id'] = $this->request->getSession()->read('Auth.id');
+            $data['creator_id'] = $this->request->getSession()->read('Auth.id');
 
             $packet = $this->Packets->patchEntity($packet, $data);
 
@@ -405,6 +411,7 @@ class PacketsController extends AppController
                 if ($valid) {
                     $packet_data = [
                         'id' => $packet->id,
+                        'packet_uid' => $this->generatePacketsUID(),
                         'name' => $packet->name,
                         'description' => $packet->description,
                         'ia' => $packet->ia,
@@ -481,6 +488,7 @@ class PacketsController extends AppController
                     }
 
                     $packet = $this->Packets->newEmptyEntity();
+                    $data['packet_uid'] = $this->generatePacketsUID();
                     $data['user_id'] = $this->request->getSession()->read('Auth.id');
                     $data['creator_id'] = $this->request->getSession()->read('Auth.id');
                     $packet = $this->Packets->patchEntity($packet, $data);
@@ -615,5 +623,24 @@ class PacketsController extends AppController
             $pdo = null;
 
         return $this->redirect(['controller' => 'Dashboard', 'action' => 'index']);
+    }
+
+    public function generatePacketsUID()
+    {
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyz';
+        $result = '';
+
+        for ($j = 0; $j < 4; $j++) {
+            $randomString = '';
+            for ($i = 0; $i < 7; $i++) {
+                $randomString .= $characters[rand(0, strlen($characters) - 1)];
+            }
+            $result .= $randomString;
+            if ($j < 3) {
+                $result .= '-';
+            }
+        }
+
+        return $result;
     }
 }

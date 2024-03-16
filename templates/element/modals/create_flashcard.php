@@ -9,8 +9,7 @@
             </div>
         </div>
         <div class="modal-body">
-            <?php echo $this->Form->create(null, ['url' => ['controller' => 'Flashcards', 'action' => 'create']]); ?>
-            <?php echo $this->Form->hidden('packet_id', ['value' => $packet->id]); ?>
+            <?php echo $this->Form->create(null, ['url' => ['controller' => 'Flashcards', 'action' => 'create', $packet->id]]); ?>
             <div class="input-group front">
                 <span class="title">Recto de la carte</span>
                 <div class="text-area" id="editor-flashcard-front"></div>
