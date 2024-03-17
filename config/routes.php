@@ -69,8 +69,30 @@ return function (RouteBuilder $routes): void {
         $builder->connect('/pages/*', 'Pages::display');
 
         $builder->connect(
+            '/user/{user_uid}',
+            ['controller' => 'Users', 'action' => 'view']
+        )
+            ->setPatterns(
+                [
+                    'user_uid' => '[a-z0-9_\-\.]+',
+                ]
+            )
+            ->setPass(['user_uid']);
+
+        $builder->connect(
             '/deck/{deck_uid}',
             ['controller' => 'Packets', 'action' => 'view']
+        )
+            ->setPatterns(
+                [
+                    'deck_uid' => '[a-z0-9\-]+',
+                ]
+            )
+            ->setPass(['deck_uid']);
+
+        $builder->connect(
+            '/deck/settings/{deck_uid}',
+            ['controller' => 'Packets', 'action' => 'settings']
         )
             ->setPatterns(
                 [

@@ -22,7 +22,7 @@ class PacketsController extends AppController
         $this->viewBuilder()->setLayout('play');
 
         $logged_user_uid = AppSingleton::getUser($this->request->getSession())->user_uid;
-        $packet_uid = htmlspecialchars((string)$packet_uid);
+        $packet_uid = htmlspecialchars($packet_uid);
 
         try {
             $packet = $this->Packets
@@ -177,17 +177,21 @@ class PacketsController extends AppController
         return $this->response->withStringBody(json_encode($data));
     }
 
-    public function settings(int $id)
+    public function settings(string $packet_uid)
     {
         $this->viewBuilder()->setLayout('play');
 
         $logged_user_uid = AppSingleton::getUser($this->request->getSession())->user_uid;
-        $packet_id = htmlspecialchars((string)$id);
+        $packet_uid = htmlspecialchars($packet_uid);
 
         try {
-            $packet = $this->Packets->get($id, ['contain' => ['Flashcards', 'Keywords', 'Users']]);
+            $packet = $this->Packets
+                ->find()
+                ->contain(['Flashcards', 'Keywords', 'Users'])
+                ->where(['packet_uid' => $packet_uid])
+                ->first();
+            ;
         } catch (RecordNotFoundException $e) {
-            // Si le paquet n'est pas trouvé on redirige vers dashboard
             return $this->redirect(['controller' => 'Dashboard', 'action' => 'index']);
         }
 
@@ -403,6 +407,10 @@ class PacketsController extends AppController
 
             try {
                 $packet = $this->Packets->get($packet_id);
+
+                if($packet->user_id == AppSingleton::getUser($this->request->getSession())->id) {
+                    $valid = false;
+                }
 
                 if (!$packet->public) {
                     $valid = false;
