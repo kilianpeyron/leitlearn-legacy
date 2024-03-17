@@ -1,0 +1,245 @@
+.section-packets {
+    margin-bottom: 30px;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+}
+
+.section-header .scroll-buttons {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.section-header .scroll-buttons .scroll-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    margin-left: 10px;
+    color: white;
+    background: black;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, .125);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.section-header .scroll-buttons .scroll-button:hover {
+    background: rgba(255, 255, 255, .125);
+}
+
+.section-header .scroll-buttons .scroll-button:active {
+    transform: scale(.95);
+}
+
+.section-header .scroll-buttons .scroll-button span {
+    font-size: 30px;
+}
+
+
+.section-header .scroll-buttons .scroll-button:first-child {
+    margin-left: 0;
+}
+
+.packets {
+    margin: 30px 0 50px;
+}
+
+.packet-title {
+    color: white;
+    margin-top: 30px;
+}
+
+.packets h2 {
+    margin-bottom: 15px;
+}
+
+.packets .packet {
+    position: relative;
+    width: 250px;
+    height: 150px;
+    justify-content: center;
+    display: flex;
+}
+
+.packets .content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.packets .content .packet {
+    margin-right: 15px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.packet {
+    transition: all .3s;
+}
+
+.packet:active {
+    transform: scale(.98);
+}
+
+.scroll-menu .packet,
+.packets .content .packet {
+    position: relative;
+    border-radius: 10px;
+    height: 175px;
+    min-width: 250px;
+    padding: 10px 12px;
+    margin-right: 20px;
+    justify-content: flex-start;
+    color: black;
+    background: white;
+    border: 1px solid rgba(0, 0, 0, .125);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+.packet.ai-packet {
+    color: white !important;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite !important;
+}
+
+.packet .title {
+    margin-bottom: 5px;
+    max-height: 60px;
+    color: black;
+    font-size: 18px !important;
+    overflow-y: scroll;
+}
+
+.packet .flashcards-number,
+.packet-header .title sup {
+    display: inline;
+    padding: 1px 8px;
+    color: rgba(0, 0, 0, .3);
+    font-weight: 500;
+    font-size: 11px;
+    border-radius: 25px;
+    background: rgba(0, 0, 0, .1);
+}
+
+.packet .flashcards-number {
+    display: flex;
+    align-items: center;
+}
+
+.packet .flashcards-number span {
+    font-size: 19px;
+    margin-right: 3px;
+}
+
+.packet.ai-packet .flashcards-number {
+    color: rgba(255, 255, 255, .7);
+}
+
+.packet .packet-head {
+    display: flex;
+    align-items: baseline;
+    flex-direction: column;
+}
+
+.packet .author {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.packet .author .profile-picture {
+    width: 30px;
+    height: 30px;
+    background: rgba(0, 0, 0, .1);
+    border-radius: 50%;
+    margin-right: 7px;
+}
+
+.packet .author .author-name {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.packet.ai-packet .title {
+    color: white !important;
+}
+
+.packet.ai-packet .ia-packet-report {
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+}
+
+.protected::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.ai-packet.protected::before {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite !important;
+}
+
+.protected .hidden {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.protected .hidden span {
+    font-size: 40px;
+}
+
+.creator-infos .information {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.creator-infos .information .profile-picture {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.creator-infos .information .data {
+    display: flex;
+    flex-direction: column;
+}
+
+.creator-infos .information .data.made-by {
+    margin-left: 10px;
+}
+
+.creator-infos .information .data span {
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, .5);
+}
+
+.creator-infos .information .data .keys strong {
+    margin-right: 7px;
+}

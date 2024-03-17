@@ -1,0 +1,38 @@
+.tabs {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.tabs button {
+    width: 50%;
+    background: transparent;
+    padding: 15px;
+    font-weight: 600;
+    border: 0;
+    color: rgba(0, 0, 0, .4);
+    border-bottom: 2px solid rgba(0, 0, 0, .075);
+    cursor: pointer;
+}
+
+.tabs button.active {
+    color: black;
+    border-bottom: 2px solid black;
+}
+
+.tab {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    height: 75%;
+}
+
+.tab span {
+    text-align: center;
+}
+
+.tab span .search-result-null {
+    font-weight: 600;
+    text-align: center;
+}

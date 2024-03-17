@@ -1,0 +1,866 @@
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, .4);
+    z-index: 10;
+}
+
+
+.modal.show {
+    display: flex;
+}
+
+.modal .modal-container {
+    position: relative;
+    width: 500px;
+    height: auto;
+    background: white;
+    border: 2px solid rgba(0, 0, 0, .2);
+    border-radius: 15px;
+    animation: leitlearn_modal_slide_in 0.3s forwards;
+}
+
+.modal:not(.show) .modal-container {
+    animation: leitlearn_modal_slide_out 0.3s forwards;
+}
+
+.modal.detail-modal .modal-container {
+    width: 700px;
+}
+
+.modal .modal-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 0;
+    width: 100%;
+}
+
+.modal .modal-header .title {
+    max-width: 70%;
+    color: black;
+    text-align: center;
+    font-size: 18px;
+    word-break: break-word;
+}
+
+.modal .modal-header .modal-close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: 0;
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 0, 0, .1);
+    color: black;
+    border-radius: 50%;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+.modal .modal-body,
+.modal .modal-body form {
+    display: flex;
+    margin: 0 50px;
+    flex-direction: column;
+}
+
+.modal .modal-body .remaining-time,
+.modal .modal-body .confirm {
+    font-weight: 500;
+    text-align: center;
+}
+
+.modal .modal-body .remaining-time {
+    margin-bottom: 15px;
+}
+
+.modal .modal-body .remaining-time #remainingTime {
+    font-weight: 600;
+}
+
+.modal .modal-body form {
+    margin: 15px 0;
+}
+
+.modal.detail-modal .modal-body .detail {
+    margin-top: 10px;
+    color: black;
+}
+
+.modal.detail-modal .modal-body .detail .creator-infos {
+    margin-top: 15px;
+}
+
+.modal.detail-modal .modal-body .detail .creator-infos .information .data .packet-creator {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.modal.detail-modal .modal-body .detail .creator-infos .information .data .packet-creator .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.modal.detail-modal .detail-tab {
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.modal.detail-modal .detail-tab table .actions .action {
+    margin-right: 10px;
+}
+
+button[type=submit],
+.modal.detail-modal button[type=submit] {
+    width: 100%;
+    padding: 10px 15px;
+    background: var(--main-bg-color);
+    color: black;
+    font-weight: 600;
+    font-size: 15px;
+    border: 2px solid rgba(0, 0, 0, .075);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal.detail-modal .modal-body form {
+    margin: 0 !important;
+}
+
+.modal.detail-modal .flashcards {
+    max-height: 175px;
+    width: 100%;
+    padding: 10px 5px;
+    margin-top: 10px;
+    overflow-y: scroll;
+}
+
+.modal.detail-modal .flashcards .flashcard {
+    padding: 25px 15px;
+}
+
+.modal.detail-modal .actions {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.modal.detail-modal .actions button[type=submit] {
+    width: 70%;
+}
+
+.modal.detail-modal .loader-button {
+    margin-top: 15px;
+    width: 100%;
+}
+
+.modal.detail-modal #detail-tab-flashcards .loader-button {
+    margin-top: 0;
+}
+
+modal .modal-header .modal-close:active {
+    transform: scale(0.90);
+}
+
+.modal .modal-container .btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+
+}
+
+.modal .modal-container .modal-body .features {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0 10px;
+}
+
+.modal .modal-container .modal-body .features .feature {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-weight: 500;
+    color: black;
+    cursor: pointer;
+}
+
+.modal .modal-container .modal-body .features .feature .icon {
+    margin-bottom: 6px;
+}
+
+.modal .modal-container .modal-body .features .feature .icon span {
+    font-size: 30px;
+    color: #6c6767;
+}
+
+.modal .modal-container .modal-body .features .feature .content {
+    max-width: 100px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 13px;
+    color: #6c6767;
+}
+
+.modal .modal-container .modal-body .btn-container .modal-btn {
+    display: flex;
+    align-items: center;
+    padding: 8px 10px;
+    margin-left: 10px;
+    font-weight: 500;
+    text-decoration: none;
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: 8px 15px 8px 11px;
+    background: var(--main-bg-color);
+    color: black;
+    cursor: pointer;
+    width: 190px;
+    justify-content: center;
+}
+
+.modal .modal-container .modal-body .btn-container .modal-btn i {
+    margin-left: 7px;
+}
+
+.modal .modal-container .modal-header .text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal .modal-container .modal-header .text-content h2 {
+    margin-bottom: 15px;
+}
+
+.modal .modal-container .modal-body .detail-tab select {
+    width: 30%;
+}
+
+.modal .modal-container .modal-body form .text-separator {
+    position: relative;
+    margin: 20px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.modal .modal-container .modal-body form .text-separator span {
+    position: absolute;
+    top: -13px;
+    left: 50%;
+    transform: translate(-50%);
+    background: #fff;
+    color: #ccc;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 5px;
+}
+
+.modal .modal-container .modal-body .no-account {
+    padding-top: 10px;
+    border-top: 1px solid rgba(0, 0, 0, .075);
+    text-align: center;
+    color: rgba(0, 0, 0, .6);
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal .modal-container .modal-body .policy {
+    margin: 10px 0 15px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, .6);
+}
+
+.modal .modal-container .modal-body .policy a {
+    color: black;
+    text-decoration: none;
+}
+
+.modal.turbo .modal-thumbnail.animated {
+    animation: 3s infinite leitlearn_move_up;
+    cursor: pointer;
+}
+
+.modal.turbo .modal-thumbnail img {
+    height: 200px;
+    width: 200px;
+}
+
+.modal.turbo .modal-body h2 {
+    margin-bottom: 15px;
+    font-size: 30px;
+    color: black;
+}
+
+.modal.turbo .modal-body h2 span {
+    background-color: #f06543;
+    background-image: linear-gradient(315deg, #f06543 0%, #ffbe3d 74%);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.modal.turbo .modal-body .features {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    margin: 10px 0 0;
+    padding: 20px 15px 15px 15px;
+    border: 2px solid rgba(0, 0, 0, .1);
+    border-radius: 10px;
+}
+
+.modal.turbo .modal-body .features .title {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 2px 5px;
+    background: white;
+    border-radius: 25px;
+    border: 2px solid rgba(0, 0, 0, .1);
+    color: rgba(0, 0, 0, .4);
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.modal.turbo .modal-body .features .feature {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    transition: all .3s;
+}
+
+.modal.turbo .modal-body .features .feature:last-child {
+    margin-bottom: 0;
+}
+
+.modal.turbo .modal-body .features .feature .badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    width: 25px;
+    height: 25px;
+    background-color: #f06543;
+    background-image: linear-gradient(315deg, #f06543 0%, #ffbe3d 74%);
+    color: white;
+    border-radius: 50%;
+}
+
+.modal.turbo .modal-body .features .feature span {
+    text-align: center;
+    color: black;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.modal.turbo .modal-body .features .feature .badge span {
+    font-size: 22px;
+    color: white;
+}
+
+.modal.turbo .modal-body .subscribe {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 15px 0 20px;
+    background-color: #f06543;
+    background-image: linear-gradient(315deg, #f06543 0%, #ffbe3d 74%);
+    color: black;
+    font-weight: 600;
+    font-size: 16px;
+    border: 0;
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    cursor: pointer;
+}
+
+.modal.black .modal-container {
+    background: black;
+}
+
+.modal.black .modal-close {
+    background: rgba(255, 255, 255, .1);
+    color: white;
+}
+
+.modal .news-container {
+    max-height: 350px;
+    overflow-y: scroll;
+}
+
+.modal .news .news-thumbnail {
+    height: 200px;
+    width: 100%;
+    margin: 20px 0 15px;
+    background: white;
+    background-size: 60%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.modal .news,
+.modal .news .news-title{
+    margin-bottom: 15px;
+}
+
+.modal .news .news-desc,
+.modal .news ul li {
+    margin-bottom: 5px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.modal .news ul {
+    padding: 10px 0 0 15px;
+}
+
+/*  Importation via fichier */
+
+.modal .modal-container .modal-body .minimum {
+    margin-bottom: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #ccc;
+}
+
+.leitlearn_import_paquet_via_file {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.leitlearn_import_paquet_via_file label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    border: 2px solid rgba(0, 0, 0, .075);
+    border-radius: 10px;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+.leitlearn_import_paquet_via_file label:active {
+    transform: scale(.98);
+}
+
+.leitlearn_import_paquet_via_file .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 7px;
+    border-radius: 50%;
+    border: 2px solid var(--main-bg-color);
+}
+
+.leitlearn_import_paquet_via_file .icon span {
+    color: var(--main-bg-color);
+    font-size: 30px;
+}
+
+.leitlearn_import_paquet_via_file input {
+    position: absolute;
+    visibility: hidden;
+}
+
+.leitlearn_import_paquet_via_file .supported {
+    margin-top: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #ccc;
+}
+
+.modal-body .search-keywords-group {
+    position: relative;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: 2px solid rgba(0, 0, 0, .075);
+}
+
+.modal-body .search-keywords-group input {
+    border: 0;
+    border-bottom: 2px solid rgba(0, 0, 0, .075);
+    border-radius: 10px 10px 0 0;
+}
+
+.modal-body .search-keywords-group input::placeholder {
+    color: rgba(0, 0, 0, .4);
+}
+
+.modal-body .search-keywords-group input:focus {
+    border: 0 !important;
+    border-bottom: 2px solid rgba(0, 0, 0, .075) !important;
+}
+
+.modal-body .select-keywords {
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.modal-body .select-keywords .keywords {
+    display: flex;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    cursor: pointer;
+    border-radius: 10px;
+    align-items: center;
+    padding: 8px;
+    max-height: 100px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.modal-body .select-keywords .keywords span {
+    margin-right: 10px;
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.modal-body .search-users-group input {
+    margin-bottom: 0;
+}
+
+.modal-body .view-users {
+    max-height: 390px;
+    overflow-y: scroll;
+}
+
+.modal-body .view-users .user {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    font-weight: 500;
+    background: white;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+}
+
+.modal-body .view-users .user:last-child {
+    border: 0;
+}
+
+.modal-body .view-users .user .profile-picture {
+    min-width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    border-radius: 50%;
+    background-size: cover !important;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background: var(--main-bg-color);
+    cursor: pointer;
+}
+
+.modal-body .view-users .user a {
+    display: flex;
+    margin-left: auto;
+    color: rgba(0, 0, 0, .5);
+}
+
+.wider .input-group textarea {
+    margin-bottom: 0;
+}
+
+.wider {
+    border-radius: 25px 25px 0 0;
+    width: 700px !important;
+}
+
+.modal-body .btn-group-front {
+    display: flex;
+    padding: 3px 20px;
+    border-radius: 0 0 25px 25px;
+    border: 2px solid #e5e5e5;
+    margin-bottom: 20px;
+    height: 50px;
+    border-top: none;
+}
+.modal-body .btn-group-front button {
+    border: none;
+    padding: 7px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.modal-body .btn-group-front .btn-flashcard-options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.modal-body .btn-group-front .btn-flashcard-options:hover {
+    background: rgba(0, 0, 0, .050);
+    transition: ease 0.3s;
+
+}
+.modal-body .btn-group-front .btn-flashcard-options span {
+    font-family: 'Material Symbols Rounded';
+    font-size: 24px;
+    font-weight: 300;
+
+}
+.modal-body .btn-group-front .separator {
+    display: flex;
+    flex-direction: column;
+    width: 1px;
+    background: rgba(0, 0, 0, .1);
+    margin: 10px 2px;
+}
+
+.wider {
+    max-height: 640px;
+    overflow-y: auto;
+    border-radius: 25px 25px 0 0;
+    width: 700px !important;
+}
+
+.wider .modal-header{
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 2;
+}
+
+.wider .input-group.front,
+.wider .input-group.back{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.wider .input-group.front .title,
+.wider .input-group.back .title{
+    margin-bottom: 10px;
+}
+.wider .input-group .ql-toolbar{
+    order: 2;
+    display: flex;
+    padding: 3px 20px;
+    border-radius: 0 0 25px 25px;
+    border-right: 2px solid #e5e5e5!important;
+    border-left: 2px solid #e5e5e5!important;
+    border-bottom: 2px solid #e5e5e5!important;
+    height: 50px;
+    border-top: none;
+}
+
+
+.ql-toolbar.ql-snow + .ql-container.ql-snow {
+    border: 2px solid rgba(0, 0, 0, .075)!important;
+}
+
+.ql-toolbar.ql-snow .ql-formats{
+    margin: 0!important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ql-toolbar.ql-snow .ql-formats button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    background: white;
+    width: 100%;
+    height: 100%;
+}
+
+.ql-toolbar.ql-snow .ql-formats button:hover{
+    background: rgba(0, 0, 0, .050);
+    transition: ease 0.3s;
+}
+
+
+.ql-toolbar.ql-snow .ql-formats button span{
+    margin:0;
+    font-size: 24px;
+    color: black;
+    font-weight: 300;
+}
+
+.ql-toolbar.ql-snow .ql-formats .ql-header .ql-picker{
+    margin: 0!important;
+
+}
+.wider .input-group textarea{
+    margin-bottom: 0;
+    border-radius: 20px 20px 0 0;
+    height: 150px;
+    border: 2px solid rgba(0, 0, 0, .075);
+}
+
+.input-group .title {
+    color: rgba(0, 0, 0, .4);
+    margin-left: 10px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.input-group .text-area p {
+    word-wrap: break-word;
+    white-space: break-spaces;
+    margin: 10px 0;
+}
+.text-area{
+    margin-bottom: 0;
+    border-radius: 20px 20px 0 0;
+    min-height: 150px;
+    font-weight: 500;
+    font-size: 15px;
+    border: 2px solid rgba(0, 0, 0, .075);
+    cursor: pointer;
+    width: 100%;
+    padding: 12px 20px;
+    margin-top: 10px;
+    outline: 0;
+    overflow-y: auto;
+}
+
+.text-area:focus {
+    border: 2px solid  var(--main-bg-color);
+}
+
+.text-area:focus:hover {
+    cursor: text;
+}
+
+.modal-body .btn-group-front {
+    display: flex;
+    padding: 3px 20px;
+    border-radius: 0 0 25px 25px;
+    border: 2px solid #e5e5e5;
+    margin-bottom: 20px;
+    height: 50px;
+    border-top: none;
+}
+.modal-body .btn-group-front button {
+    border: none;
+    padding: 7px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.modal-body .btn-group-front .btn-flashcard-options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    background: white;
+}
+
+.modal-body .btn-group-front .btn-flashcard-options:hover {
+    background: rgba(0, 0, 0, .050);
+    transition: ease 0.3s;
+
+}
+.modal-body .btn-group-front .btn-flashcard-options span {
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.tools-separator {
+    display: block;
+    min-width: 1px;
+    min-height: 20px;
+    margin: 0 7px;
+    background: rgba(0, 0, 0, .125);
+}
+
+.ql-tooltip {
+    left: 0!important;
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 750px) {
+    .modal .modal-container {
+        width: 600px !important;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .modal .modal-container {
+        width: 500px !important;
+    }
+
+    .modal.detail-modal .detail .thumbnail {
+        display: none;
+    }
+
+    .modal.detail-modal .detail .infos {
+        width: 100%;
+    }
+
+    .modal.detail-modal .detail .infos .desc {
+        text-align: center;
+    }
+
+    .modal.detail-modal .detail .infos .keys {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .modal .modal-container {
+        position: absolute;
+        left: 0;
+        bottom: -100%;
+    }
+
+    .modal.show .modal-container {
+        position: absolute;
+        bottom: 0;
+        width: 100% !important;
+        border-radius: 15px 15px 0 0;
+    }
+
+    .modal .modal-body,
+    .modal .modal-body form {
+        margin: 0 15px 15px;
+    }
+
+    .modal .modal-body form {
+        margin: 10px;
+    }
+
+    .modal .modal-container .modal-body select {
+        padding: 10px;
+    }
+}

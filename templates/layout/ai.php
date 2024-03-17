@@ -28,9 +28,7 @@ $cakeDescription = ' - Leitlearn';
         <?= $cakeDescription ?>
     </title>
     <?= $this->Html->meta('icon', 'img/leitlearn_2_logo_white.png') ?>
-    <?= $this->Html->css(['base', 'app', 'ai']) ?>
     <?= $this->fetch('meta') ?>
-    <?= $this->fetch('css') ?>
     <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
@@ -44,7 +42,7 @@ echo $this->fetch('content');
 ?>
 
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script type="module" src="/js/app.js?v=<?= random_int(1000000, 9999999) ?>"></script>
+<script type="module" src="/js/bundle.js?v=<?= random_int(1000000, 9999999) ?>"></script>
 </body>
 
 </html>

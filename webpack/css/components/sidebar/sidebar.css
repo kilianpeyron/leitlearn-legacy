@@ -1,0 +1,160 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80px;
+    height: 100vh;
+    background: white;
+    border-right: 1px solid rgba(0, 0, 0, .125);
+    z-index: 8;
+}
+
+.sidebar.landing {
+    background: transparent;
+    background-image: linear-gradient(to right, black, transparent);
+    border-right: 0;
+}
+
+.sidebar .sidebar-container {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    padding: 20px 0;
+}
+
+.sidebar .logo {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    height: 50px;
+    transform: translateX(-50%);
+    background-image: url('https://static.leitlearn.com/img/v2/leitlearn_2_logo.png');
+}
+
+.sidebar ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    list-style: none;
+}
+
+.sidebar ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
+    color: black;
+    border-radius: 10px;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+.sidebar ul li.active {
+    background: var(--main-bg-color);
+}
+
+.sidebar ul li:last-child {
+    margin-bottom: 0;
+}
+
+.sidebar ul li a {
+    display: flex;
+    color: black;
+}
+
+.sidebar ul li span {
+    font-size: 35px;
+    transition: all .3s ease;
+}
+
+.sidebar ul li span:hover {
+    transform: scale(1.03);
+}
+
+.sidebar.landing ul li,
+.sidebar.landing ul li a {
+    color: white;
+}
+
+.sidebar ul li:focus span,
+.sidebar ul li:active span {
+    font-size: 30px;
+}
+
+.sidebar ul li.active span {
+    color: black;
+}
+
+@media screen and (max-width: 620px) {
+    .sidebar {
+        top: auto;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50px;
+    }
+
+    .sidebar.dash {
+        background: white !important;
+        border-top: 1px solid rgba(0, 0, 0, .075);
+    }
+
+    .sidebar .sidebar-container {
+        padding: 0;
+    }
+
+    .sidebar .logo {
+        display: none;
+    }
+
+    .sidebar ul {
+        width: 100%;
+        justify-content: space-around;
+        flex-direction: row;
+    }
+
+    .sidebar ul li {
+        margin-bottom: 0;
+    }
+
+    .sidebar ul li:nth-child(1) {
+        order: 2;
+    }
+
+    .sidebar ul li:nth-child(2) {
+        order: 1;
+    }
+
+    .sidebar ul li:nth-child(3) {
+        order: 3;
+    }
+
+    .sidebar ul li:nth-child(4) {
+        order: 4;
+    }
+
+    .sidebar ul li:last-child {
+        order: 5;
+    }
+
+    .sidebar ul li.active {
+        background: transparent !important;
+    }
+
+    .sidebar.landing {
+        background: #111111;
+    }
+
+    .sidebar ul li span {
+        font-size: 30px;
+    }
+
+    .sidebar.landing ul li.active span {
+        color: white;
+    }
+}

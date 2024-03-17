@@ -1,0 +1,109 @@
+.flashcards {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.flashcards .flashcard {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto !important;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    padding: 10px 15px;
+    color: black;
+    border: 1px solid rgba(0, 0, 0, .125);
+    cursor: pointer;
+}
+
+.flashcards .flashcard:last-child {
+    margin-bottom: 0;
+}
+
+.flashcards .flashcard .time-remaining {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #5264be;
+}
+
+.flashcards .flashcard .time-remaining span {
+    margin-right: 5px;
+    font-size: 18px;
+}
+
+.flashcards .flashcard .question,
+.flashcards .flashcard .answer {
+    word-break: break-word;
+    font-weight: 500;
+}
+
+.flashcards .flashcard .answer {
+    margin-top: 5px;
+    color: rgba(0, 0, 0, .5);
+    font-size: 14px;
+}
+
+.flashcards .flashcard .answer {
+    display: flex;
+    align-items: center;
+}
+
+.flashcards .flashcard .answer .content {
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    border-radius: 25px;
+}
+
+.flashcards .flashcard .answer .content.show {
+    filter: blur(0);
+    -webkit-filter: blur(0);
+}
+
+.flashcards .flashcard .answer .show-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    margin-left: 15px;
+    color: rgba(0, 0, 0, .8);
+    transition: all .3s;
+    border-radius: 50%;
+}
+
+.flashcards .flashcard .answer .show-btn span {
+    font-size: 20px;
+}
+
+.flashcards .flashcard .import-actions,
+.flashcards .flashcard .flashcard-actions {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.flashcards .flashcard .flashcard-actions .flashcard-action {
+    margin-left: 10px;
+}
+
+.flashcards .flashcard .flashcard-actions .flashcard-action span {
+    padding: 5px;
+    border-radius: 50%;
+    transition: all .3s;
+}
+
+.flashcards .flashcard .answer .show-btn:hover,
+.flashcards .flashcard .flashcard-actions .flashcard-action span:hover {
+    background: rgba(0, 0, 0, .1);
+}
+
+.flashcards .flashcard .answer .show-btn:active,
+.flashcards .flashcard .flashcard-actions .flashcard-action span:active {
+    transform: scale(0.90);
+}

@@ -1,0 +1,157 @@
+input,
+textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin-bottom: 10px;
+    border-radius: 25px;
+    font-weight: 500;
+    font-size: 15px;
+    border: 2px solid rgba(0, 0, 0, .075);
+    cursor: pointer;
+}
+
+textarea {
+    resize: none;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border: 2px solid var(--main-bg-color);
+    outline: var(--main-bg-color) !important;
+}
+
+input[type=submit] {
+    background: var(--main-bg-color);
+    border: 2px solid rgba(0, 0, 0, .075);
+    font-weight: 600;
+}
+
+input:last-child {
+    margin-bottom: 0;
+}
+
+form .input-flex {
+    display: flex;
+    align-items: center;
+}
+
+form .input-flex .input-group {
+    width: 50%;
+    margin: 0 10px 0 0;
+}
+
+
+form .input-flex .input-group:last-child {
+    margin-right: 0;
+}
+
+form .input-group {
+    position: relative;
+}
+
+form .input-group label {
+    position: absolute;
+    top: 14px;
+    left: 20px;
+    width: 75%;
+    background: white;
+    color: rgba(0, 0, 0, .5);
+    font-size: 14px;
+    font-weight: 500;
+    transition: all .3s;
+    z-index: 2;
+}
+
+form .input-group input:focus+label,
+form .input-group input:not(:placeholder-shown)+label,
+form .input-group textarea:focus+label,
+form .input-group textarea:not(:placeholder-shown)+label {
+    top: -10px;
+    left: 10px;
+    padding: 2px 6px;
+    width: auto;
+    color: var(--main-bg-color);
+    background: white;
+    border-radius: 15px;
+}
+
+form .input-group input:not(:focus)+label,
+form .input-group textarea:not(:focus)+label {
+    color: rgba(0, 0, 0, .4) !important;
+}
+
+form .birth select:last-child {
+    margin: 0;
+}
+
+form select {
+    padding: 10px 15px;
+    margin: 0 10px 0 0;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 15px;
+    border: 2px solid rgba(0, 0, 0, .075);
+    cursor: pointer;
+}
+
+form select#visibility-select {
+    margin: 0 0 10px 0;
+    width: 100%;
+}
+
+form .visibility .info,
+form .birth .info,
+form .genre .info {
+    color: black;
+    margin-bottom: 10px;
+}
+
+form .birth .selects,
+form .genre .selects {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+form .edit-picture-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+form .edit-picture-group .avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+form .edit-picture-group label {
+    position: absolute;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    background: rgba(0, 0, 0, .6);
+    border-radius: 50%;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+form .edit-picture-group label:hover,
+form .edit-picture-group .avatar:hover ~ #label-picture {
+    display: flex;
+}
+
+.edit-picture-group label span {
+    font-size: 30px;
+    color: rgba(255, 255, 255, .7);
+}
+
+form .edit-picture-group input{
+    display: none;
+}

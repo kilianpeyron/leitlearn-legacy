@@ -1,0 +1,585 @@
+body.landing {
+    background: black;
+    color: white;
+    font-family: var(--font-family-primary);
+}
+
+span.badge {
+    padding: 2px 6px;
+    margin-right: 8px;
+    border-radius: 2px;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: auto;
+    background-size: 400% 400%;
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    animation: gradient 15s ease infinite;
+    cursor: pointer;
+}
+
+.fixed-infos {
+    position: sticky;
+    top: 0;
+    left: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: calc(100%);
+    background: black;
+    z-index: 3;
+    cursor: pointer;
+}
+
+.fixed-infos .text {
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    color: white;
+}
+
+.fixed-infos .text .text-ia {
+    margin: 0 7px 0 5px;
+    font-weight: 700;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+header {
+    position: relative;
+    width: 100%;
+    height: 900px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    background-image: linear-gradient(to top, black, transparent);
+    padding-left: 80px;
+}
+
+#header-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+header .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+header .new {
+    display: flex;
+    align-items: center;
+    padding: 6px 15px;
+    border-radius: 25px;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    color: white;
+    font-weight: 700;
+    animation: gradient 15s ease infinite;
+    cursor: pointer;
+}
+
+header .new svg {
+    margin-left: 7px;
+}
+
+header .new.leitlearn-2 {
+    background: white;
+    color: black;
+}
+
+header .new.leitlearn-2 img {
+    height: 20px;
+    margin-right: 5px;
+}
+
+header .logo {
+    display: none;
+    margin-bottom: 15px;
+}
+
+header .logo img {
+    height: 50px;
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, .3));
+}
+
+header .title {
+    max-width: 1200px;
+    line-height: 130px;
+    font-size: 120px;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+}
+
+header .desc {
+    margin: 40px 0;
+    max-width: 400px;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+}
+
+header button,
+footer button,
+.profile .profile-data .action {
+    display: flex;
+    align-items: center;
+    padding: 13px 25px;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    background: white;
+    border-radius: 25px;
+    border: 0;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+header button {
+    margin-top: 0;
+}
+
+header button span,
+footer button span {
+    margin-left: 7px;
+    animation: 1.5s infinite leitlearn_header_arrow_move;
+}
+
+header button:active,
+.presentation button:active,
+footer button:active,
+.profile .profile-data .action:active {
+    transform: scale(0.95);
+}
+
+.section-feature {
+    position: relative;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 450px;
+    margin: 60px 0 80px;
+    background: #111111;
+    text-align: center;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+.section-feature.new {
+    border-radius: 15px;
+}
+
+.section-feature .content {
+    z-index: 2;
+}
+
+.section-feature .badge {
+    position: relative;
+    padding: 8px 15px;
+    margin: 0 auto 20px;
+    width: 120px;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #fff;
+    font-weight: 600;
+}
+
+.section-feature .badge::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50px;
+    padding: 3px;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    -webkit-mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
+
+.section-feature .title {
+    font-size: 50px;
+    max-width: 500px;
+    margin: 0 auto 25px;
+}
+
+.section-feature .title span {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.section-feature .desc {
+    margin: 0 auto;
+    font-size: 20px;
+    font-weight: 500;
+    max-width: 600px;
+    color: rgba(255, 255, 255, .7);
+}
+
+.section-features {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.section-features .feature {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    margin: 0 auto 200px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.section-features .feature .media {
+    position: relative;
+    width: 50%;
+    height: 400px;
+    margin-right: 50px;
+    background: var(--main-bg-color);
+    background-size: cover;
+    background-position: center center;
+    border-radius: 15px;
+}
+
+.section-features .feature .media.market {
+    background-image: url('https://static.leitlearn.com/img/market.jpg');
+}
+
+.section-features .feature .media.learn {
+    background-image: url('https://static.leitlearn.com/img/learn.jpg');
+}
+
+.section-features .feature .media.leitlearn-2 {
+    background: white;
+    background-image: url('https://static.leitlearn.com/img/v2/leitlearn_2_news.png');
+    background-size: 60%;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.section-features .feature .content {
+    width: 50%;
+    text-align: left;
+}
+
+.section-features .feature .content .title {
+    font-size: 55px;
+    margin-bottom: 10px;
+}
+
+.section-features .feature .content .title span {
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.section-features .feature .content .title span.pink {
+    background-color: #c86fc9;
+    background-image: linear-gradient(316deg, #c86fc9 0%, #f79ad3 74%);
+}
+
+.section-features .feature .content .title span.yellow {
+    background-color: #fbb034;
+    background-image: linear-gradient(315deg, #fbb034 0%, #ffdd00 74%);
+}
+
+.section-features .feature .content .title span.dashed {
+    background-image: none;
+    -webkit-background-clip: initial;
+    -webkit-text-fill-color: initial;
+    color: white;
+    border-bottom: 2px dashed white;
+}
+
+.section-features .feature .content .desc {
+    margin-bottom: 20px;
+    max-width: 500px;
+    font-size: 20px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, .7);
+}
+
+.section-features .feature .content .action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 13px 25px;
+    width: 150px;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 50px;
+    color: white;
+    text-decoration: none;
+    transition: all .3s;
+}
+
+.section-features .feature .content .action.pink {
+    background-color: #c86fc9;
+    background-image: linear-gradient(316deg, #c86fc9 0%, #f79ad3 74%);
+}
+
+.section-features .feature .content .action.yellow {
+    color: black;
+    background-color: #fbb034;
+    background-image: linear-gradient(315deg, #fbb034 0%, #ffdd00 74%);
+}
+
+.section-features .feature .content .action.white {
+    background: white;
+    color: black;
+}
+
+.section-features .feature .content .action:hover {
+    transform: translateY(-7px);
+}
+
+.section-features .feature:nth-child(2n) {
+    flex-direction: row-reverse;
+}
+
+.section-features .feature:nth-child(2n) .media {
+    margin: 0 0 0 50px;
+}
+
+.section-features .feature.full .media .title {
+    position: absolute;
+    bottom: -33px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 20px;
+    background: #111111;
+    font-size: 20px;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 25px;
+}
+
+.section-presentation {
+    margin: 0 20%;
+}
+
+.presentation {
+    display: flex;
+    flex-direction: row;
+    margin: 100px auto 0;
+}
+
+.presentation .picture {
+    width: 65%;
+    display: flex;
+    margin-right: 80px;
+}
+
+.presentation .picture img {
+    border-radius: 10px;
+}
+
+.presentation .presentation-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    width: 35%;
+}
+
+.presentation .presentation-content h2 {
+    margin-bottom: 30px;
+    color: white;
+    font-size: 40px;
+}
+
+.presentation .presentation-content .content {
+    margin-bottom: 40px;
+    max-width: 500px;
+    color: rgba(255, 255, 255, .7);
+}
+
+.presentation.reverse {
+    flex-direction: row-reverse;
+}
+
+.presentation.reverse .picture {
+    margin: 0 0 0 80px;
+    justify-content: flex-end;
+}
+
+.presentation .presentation-content button {
+    margin: 0 auto 0 0;
+}
+
+@media screen and (max-width: 1500px) {
+    header {
+        height: 600px;
+    }
+
+    header .title {
+        line-height: 110px;
+        font-size: 100px;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    header {
+        height: 500px;
+    }
+
+    header .new {
+        display: none;
+    }
+
+    header .title {
+        max-width: 700px;
+        font-size: 80px;
+        line-height: 80px;
+    }
+
+    header .desc {
+        margin: 25px 0;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    header {
+        height: 400px;
+    }
+
+    header .title {
+        max-width: 500px;
+        font-size: 65px;
+        line-height: 65px;
+    }
+
+    .section-features .feature {
+        flex-direction: column !important;
+        margin-bottom: 100px;
+    }
+
+    .section-features .feature .media {
+        width: 100%;
+        margin: 0 0 30px 0 !important;
+    }
+
+    .section-features .feature .content {
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    header {
+        height: 450px;
+        padding: 0 15px;
+    }
+
+    header .new {
+        display: none;
+    }
+
+    header .logo {
+        display: block;
+    }
+
+    header button,
+    footer button {
+        padding: 10px 15px;
+    }
+}
+
+@media screen and (max-width: 513px) {
+    header h1 {
+        font-size: 35px;
+    }
+
+    .section-features .feature .media {
+        height: 300px;
+    }
+
+    .section-features .feature .title {
+        font-size: 50px !important;
+    }
+
+    .section-features .feature .content .desc {
+        font-size: 16px;
+    }
+
+    .section-features .feature .content .action {
+        width: 150px;
+        height: 50px;
+    }
+}
+
+@media screen and (max-width: 461px) {
+    header {
+        height: 350px;
+    }
+
+    header .title {
+        margin-bottom: 15px;
+        line-height: 50px;
+        font-size: 50px;
+    }
+
+    header .desc {
+        display: none;
+    }
+
+    header button {
+        margin-top: 15px;
+    }
+
+    header button,
+    footer button {
+        font-size: 18px;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .fixed-infos {
+        font-size: 14px;
+    }
+
+    .fixed-infos span.badge {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    header button,
+    footer button {
+        font-size: 17px;
+    }
+
+    .section-features .feature .media {
+        height: 250px;
+    }
+}

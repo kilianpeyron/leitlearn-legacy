@@ -1,0 +1,39 @@
+.scroll-menu {
+    position: relative;
+    margin-top: 16px;
+    overflow-x: scroll;
+}
+
+.scroll-menu h2 {
+    margin-bottom: 20px;
+}
+
+.scroll-content {
+    display: flex;
+    transition: transform 0.3s ease;
+    scroll-behavior: smooth;
+}
+
+.scroll-content a.see-more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 175px;
+    min-width: 250px;
+    padding: 10px 12px;
+    background: var(--main-bg-color);
+    color: black;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+.scroll-content img {
+    max-width: 100%;
+    height: auto;
+    margin-right: 15px;
+}
+
+.scroll-content img:last-child {
+    margin-right: 0;
+}
