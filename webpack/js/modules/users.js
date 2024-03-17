@@ -53,7 +53,7 @@ const updateUsersResults = (data) => {
         userElement.append(usernameSpan);
 
         const profileLink = document.createElement('a');
-        profileLink.href = `/users/view/${user.user_uid}`;
+        profileLink.href = `/user/${user.user_uid}`;
         profileLink.innerHTML = '<span class="material-symbols-rounded">open_in_new</span>';
         userElement.append(profileLink);
 

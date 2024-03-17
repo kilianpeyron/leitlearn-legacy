@@ -13,7 +13,7 @@ $this->assign('title', $packet->name);
                 <?php if ($is_my_packet) : ?>
                     <?= $this->Html->link(
                         '<span class="material-symbols-rounded">tune</span>',
-                        '/packets/settings/' . $packet->id,
+                        '/deck/settings/' . $packet->packet_uid,
                         ['class' => 'action play-hidden', 'escapeTitle' => false],
                     ) ?>
                     <?= $this->Form->postLink(
