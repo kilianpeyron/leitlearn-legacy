@@ -7,7 +7,7 @@ import { initAi } from "./js/modules/ai.js";
 import { initUsers } from "./js/modules/users.js";
 import { initKeywords } from "./js/modules/keywords.js";
 import { initEventHandlers } from "./js/modules/eventHandler.js";
-import './css/main.css';
+import './css/index.css';
 
 $(document).ready(function () {
     initSidebar();

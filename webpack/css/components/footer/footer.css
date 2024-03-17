@@ -1,0 +1,155 @@
+footer .footer-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 350px;
+    margin-bottom: 30px;
+    background-image: url('https://static.leitlearn.com/img/v2/leitlearn_footer_bg.jpg');
+    background-size: cover;
+    background-position: center center;
+    border-radius: 10px;
+}
+
+footer .footer-content .footer-desc {
+    color: black;
+    font-size: 60px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+footer .footer-content button {
+    background: black;
+    color: var(--main-bg-color);
+}
+
+footer .footer-data {
+    padding: 30px;
+    background: #111111;
+    border-radius: 10px 10px 0 0;
+}
+
+footer .footer-data .languages,
+footer .footer-data .social {
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+footer .footer-data .languages h4,
+footer .footer-data .social h4,
+footer .footer-data .footer-links-group .footer-links span {
+    margin-bottom: 15px;
+    color: rgba(255, 255, 255, .7);
+}
+
+
+footer .footer-data .languages ul,
+footer .footer-data .social ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+footer .footer-data .languages ul li,
+footer .footer-data .social ul li {
+    margin-right: 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+footer .footer-data .languages ul li:last-child,
+footer .footer-data .social ul li:last-child {
+    margin-right: 0;
+}
+
+footer .footer-data .social .link img {
+    width: 25px;
+    height: 25px;
+}
+
+footer .footer-data .separator {
+    margin: 70px auto;
+    background: rgba(255, 255, 255, .1);
+    height: 1px;
+    width: 75%;
+}
+
+footer .footer-data .separator.top {
+    margin: 70px auto 35px;
+}
+
+footer .footer-data .footer-links-group {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+footer .footer-data .footer-links-group .footer-links {
+    display: flex;
+    flex-direction: column;
+    margin: 35px 35px 0 0;
+    font-weight: 500;
+    list-style: none;
+}
+
+footer .footer-data .footer-links-group .footer-links:last-child {
+    margin-right: 0;
+}
+
+footer .footer-links .footer-link {
+    margin-bottom: 10px;
+}
+
+footer .footer-links .footer-link:last-child {
+    margin-bottom: 0;
+}
+
+footer .footer-links .footer-link a {
+    color: white;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+footer .footer-data .copyright {
+    display: flex;
+    align-items: center;
+    color: rgba(255, 255, 255, .7);
+    font-size: 14px;
+    cursor: pointer;
+}
+
+footer .footer-data .copyright img {
+    height: 40px;
+    margin-right: 15px;
+}
+
+@media screen and (max-width: 1560px) {
+    footer .footer-content .footer-desc {
+        font-size: 50px;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    footer .footer-content .footer-desc {
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    footer .footer-content .footer-desc {
+        max-width: 400px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    footer {
+        margin: 0 0 50px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    footer .footer-content .footer-desc {
+        max-width: 300px;
+    }
+}

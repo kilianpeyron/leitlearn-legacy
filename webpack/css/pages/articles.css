@@ -1,0 +1,15 @@
+.article .article-header {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, .125);
+}
+
+.article .article-header .date {
+    color: rgba(255, 255, 255, .7);
+    font-weight: 500;
+}
+
+.article .article-content {
+    padding: 20px 0 30px;
+}

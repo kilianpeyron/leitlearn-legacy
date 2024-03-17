@@ -1,0 +1,21 @@
+.loader-button {
+    position: relative;
+}
+
+.loader-button span.loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -11.5px;
+    margin-left: -11.5px;
+    display: none;
+}
+
+.loader {
+    width: 23px;
+    height: 23px;
+    border: 3px solid transparent;
+    border-top-color: black;
+    border-radius: 50%;
+    animation: button-loading-spinner 1s ease infinite;
+}

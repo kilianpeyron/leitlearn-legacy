@@ -1,0 +1,218 @@
+section.me {
+    position: relative;
+    width: 100%;
+    padding: 25px;
+    background-color:#99c2ff;
+    background-image:
+            radial-gradient(at 83% 74%, hsla(217,72%,63%,1) 0px, transparent 50%),
+            radial-gradient(at 96% 21%, hsla(17,90%,65%,1) 0px, transparent 50%),
+            radial-gradient(at 13% 86%, hsla(121,72%,70%,1) 0px, transparent 50%),
+            radial-gradient(at 76% 49%, hsla(36,88%,75%,1) 0px, transparent 50%),
+            radial-gradient(at 99% 47%, hsla(268,99%,74%,1) 0px, transparent 50%),
+            radial-gradient(at 65% 42%, hsla(326,98%,64%,1) 0px, transparent 50%),
+            radial-gradient(at 15% 9%, hsla(354,76%,63%,1) 0px, transparent 50%);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite !important;
+    border-radius:  0 0 10px 10px;
+}
+
+section.me .filter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .7);
+}
+
+section.me .section-header {
+    position: relative;
+    margin-bottom: 40px;
+    z-index: 2;
+}
+
+section.me .profile {
+    display: flex;
+    align-items: center;
+}
+
+section.me .profile .profile-picture {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+    border-radius: 50%;
+    background: white;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+section.me .profile .text {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    font-weight: 500;
+}
+
+section.me .profile .text span {
+    color: rgba(255, 255, 255, .7);
+}
+
+section.me .profile .text h2 {
+    font-size: 30px;
+}
+
+section.search {
+    position: relative;
+    margin: 25px 0;
+}
+
+section.search .search-input {
+    position: relative;
+}
+
+section.search .search-input label {
+    position: absolute;
+    top: 50%;
+    left: 13px;
+    transform: translateY(-50%);
+    display: flex;
+    color: rgba(255, 255, 255, .7);
+}
+
+section.search .search-input input {
+    width: 400px;
+    padding: 13px 0 13px 45px;
+    background: #111111;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    color: rgba(255, 255, 255, .7);
+}
+
+section.search .search-input input:focus,
+section.search .search-input input:active {
+    outline: none;
+    border-radius: 10px 10px 0 0;
+    border: 1px solid rgba(255, 255, 255, .4);
+}
+
+section.search .search-results {
+    position: absolute;
+    display: none;
+    width: 400px;
+    background: #111111;
+    border-radius: 0 0 10px 10px;
+    border: 1px solid rgba(255, 255, 255, .4);
+    border-top: 0;
+    z-index: 2;
+}
+
+section.search .search-results.active {
+    display: block;
+}
+
+section.search .search-results .result {
+    padding: 15px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, .7);
+    transition: all .3s;
+    cursor: pointer;
+}
+
+section.search .search-results .result:hover {
+    background: #212121;
+}
+
+section.search .search-results .result:last-child {
+    border-radius: 0 0 10px 10px;
+}
+
+.categories {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.categories a {
+    color: white;
+}
+
+.categories .category {
+    position: relative;
+    width: 170px;
+    height: 100px;
+    margin: 0 25px 25px 0;
+    padding: 10px;
+    background: red;
+    border-radius: 10px;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+.categories .category:active {
+    transform: scale(.98);
+}
+
+.categories .category .title {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.categories .category .icon {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: black;
+    border-radius: 50%;
+    background: white;
+}
+
+.categories .category .icon span {
+    font-size: 30px;
+}
+
+@media screen and (max-width: 620px) {
+    section.me .profile .profile-picture {
+        width: 60px;
+        height: 60px;
+    }
+
+    section.me .profile .text h2 {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    section.search .search-input input {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .categories .category {
+        width: 120px;
+        height: 70px;
+        margin: 0 15px 15px 0;
+        padding: 5px;
+        word-break: break-word;
+    }
+
+    .categories .category .title {
+        font-size: 14px;
+    }
+
+    .categories .category .icon {
+        width: 25px;
+        height: 25px;
+    }
+
+    .categories .category .icon span {
+        font-size: 20px;
+    }
+}
