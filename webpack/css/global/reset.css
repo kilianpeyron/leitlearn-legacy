@@ -13,11 +13,6 @@
     display: none;
 }
 
-ul,
-ol {
-    list-style: none;
-}
-
 body {
     margin: 0;
     padding: 0;
@@ -44,6 +39,14 @@ main {
 .container {
     position: relative;
     padding: 0 500px;
+}
+
+.ql-align-center {
+    text-align: center;
+}
+
+.ql-align-right {
+    text-align: right;
 }
 
 @media screen and (max-width: 2200px) {

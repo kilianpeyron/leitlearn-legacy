@@ -42,10 +42,18 @@
     font-weight: 500;
 }
 
+.flashcards .flashcard .question ol,
+.flashcards .flashcard .answer ol,
+.flashcards .flashcard .question ul,
+.flashcards .flashcard .answer ul {
+    padding-left: 16px;
+}
+
 .flashcards .flashcard .answer {
-    margin-top: 5px;
+    margin-top: 15px;
     color: rgba(0, 0, 0, .5);
     font-size: 14px;
+    position: relative;
 }
 
 .flashcards .flashcard .answer {
@@ -73,6 +81,9 @@
     color: rgba(0, 0, 0, .8);
     transition: all .3s;
     border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 .flashcards .flashcard .answer .show-btn span {
