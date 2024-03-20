@@ -7,7 +7,7 @@
                         close
                     </span>
                 </div>
-                <div class="logo"></div>
+                <?= $this->Html->image('https://static.leitlearn.com/v2/img/leitlearn_2_logo.webp', ['class' => 'logo', 'alt' => 'Leitlearn 2']) ?>
             </div>
             <div class="auth-form-body">
                 <h3 class="title">S'inscire sur Leitlearn</h3>
