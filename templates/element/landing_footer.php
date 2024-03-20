@@ -70,7 +70,7 @@
                     <li class="footer-link">
                         <?= $this->Html->link(
                             'Mon profil',
-                            '/user/me',
+                            '/user/'.$user_data['user_uid'],
                             ['escape' => false]
                         ) ?>
                     </li>
@@ -118,15 +118,15 @@
                 <span>Leitlearn</span>
                 <li class="footer-link">
                     <?= $this->Html->link(
-                        'À-propos',
-                        '/about',
+                        'Mentions légales',
+                        '/legal',
                         ['escape' => false]
                     ) ?>
                 </li>
                 <li class="footer-link">
                     <?= $this->Html->link(
                         'Contactez-nous',
-                        '/contact',
+                        'mailto:kilianpeyn@gmail.com',
                         ['escape' => false]
                     ) ?>
                 </li>
