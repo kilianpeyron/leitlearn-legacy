@@ -56,6 +56,9 @@ class PacketsTable extends Table
         $this->hasMany('Flashcards', [
             'foreignKey' => 'packet_id',
         ]);
+        $this->hasMany('Sessions', [
+            'foreignKey' => 'packet_id',
+        ]);
         $this->belongsToMany('Keywords', [
             'foreignKey' => 'packet_id',
             'targetForeignKey' => 'keyword_id',
@@ -93,8 +96,8 @@ class PacketsTable extends Table
             ->notEmptyString('importation_count');
 
         $validator
-            ->boolean('public')
-            ->notEmptyString('public');
+            ->integer('status')
+            ->notEmptyString('status');
 
         $validator
             ->boolean('ia')
