@@ -1,4 +1,4 @@
-<div class="modal detail-modal" id="detail-modal">
+<div class="modal detail-modal show" id="detail-modal">
     <div class="modal-container">
         <div class="modal-header">
             <h2 class="title" id="modal-title">Deck Name</h2>
@@ -23,6 +23,7 @@
                             <div class="keys" id="modal-detail-keys"></div>
                         </div>
                     </div>
+                    <?= $this->cell('FeatureFlags::display', ['packet_modal_like_dislike']); ?>
                     <div class="information">
                         <div class="data">
                             <span>Créateur du paquet</span>
