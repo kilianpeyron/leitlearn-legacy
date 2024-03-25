@@ -6,7 +6,6 @@ namespace App\Controller;
 use App\Utility\AppSingleton;
 use Cake\Datasource\Exception\RecordNotFoundException;
 use Cake\Http\Response;
-use DateTime;
 
 class FlashcardsController extends AppController
 {
@@ -132,19 +131,22 @@ class FlashcardsController extends AppController
      * @param int|null $flashcard_id
      * @return \Cake\Http\Response
      */
-    public function increase(?int $flashcard_id = null)
+    public function increase()
     {
-        $this->autoRender = false; // Désactive le rendu automatique de la vue
-        $this->response = $this->response->withType('application/json');
+            $this->autoRender = false; // Désactive le rendu automatique de la vue
+            $this->response = $this->response->withType('application/json');
+            $data = $this->request->getData();
 
-        $flashcard = $this->Flashcards->find()->where(['id' => $flashcard_id])->first();
+            $flashcard = $this->Flashcards->find()->where(['id' => $data['flashcard']])->first();
+            $packet = $this->Flashcards->Packets->get($data['packet']);
 
-        if ($flashcard) {
-            $flashcard->leitnerFolder += 1;
-            $flashcard->modified = new DateTime('+ 1 day');
+        if ($flashcard && $this->matchUserWithPacket($this->request->getSession()->read('Auth.id'), $packet->packet_uid)) {
+            $data_flashcard['leitner_folder'] = $flashcard->leitner_folder += 1;
+
+            $this->Flashcards->patchEntity($flashcard, $data_flashcard);
 
             if ($this->Flashcards->save($flashcard)) {
-                $response = ['status' => 'success'];
+                $response = $this->Flashcards->save($flashcard);
             } else {
                 $response = ['status' => 'error', 'message' => 'La mise à jour a échoué.'];
             }
@@ -165,12 +167,11 @@ class FlashcardsController extends AppController
         if ($this->request->is(['post', 'put'])) {
             $valid = true;
 
-            if(!isset($this->request->getData()['selected_packet'])) {
+            if (!isset($this->request->getData()['selected_packet'])) {
                 $valid = false;
             }
 
-
-            if(!isset($this->request->getData()['flashcards'])) {
+            if (!isset($this->request->getData()['flashcards'])) {
                 $valid = false;
             }
 

@@ -1,3 +1,5 @@
+import {api} from "../api.js";
+
 export const initSessions = () => {
         handleBtnValidClick();
         handleBtnFailClick();
@@ -13,6 +15,9 @@ function handleBtnValidClick()
     let btn_valid = document.getElementById('btn-valid');
     if (btn_valid) {
         btn_valid.addEventListener('click', function () {
+            let flashcard_id = active_flashcard.getAttribute('data-idflashcard');
+            let paquet_id = document.getElementById('game-visu-session').getAttribute('data-idpacket');
+            increaseLeitnerFolder(flashcard_id, paquet_id);
             removeCardActiveAndFlipToNext();
             updateProgressBar();
         });
@@ -85,8 +90,27 @@ function updateProgressBar()
     }
 }
 
+function increaseLeitnerFolder(id_flashcard, id_packet)
+{
+    let csrfToken = document.body.dataset.csrfToken;
+    let data = {
+        _csrfToken: csrfToken,
+        flashcard: id_flashcard ,
+        packet : id_packet
+    };
+    $.ajax({
+        type: "POST",
+        url: "/flashcards/increase",
+        data: data,
+        success: function (response) {
+            console.log(response);
+        },
+    });
+}
+
+
 /**
- * Fait une animation conffeti à la fin de la session de jeu.
+ * Fait une animation confeti à la fin de la session de jeu.
  */
 function boum()
 {
