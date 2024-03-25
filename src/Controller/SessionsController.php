@@ -6,11 +6,11 @@ namespace App\Controller;
 class SessionsController extends AppController
 {
     private $packet;
-    private $flashcards;
     private $session;
 
     public function index(string $session_uid)
     {
+
         $session = $this->Sessions
             ->find()
             ->contain(['Packets'])
@@ -26,6 +26,10 @@ class SessionsController extends AppController
         $this->packet = $packet;
         $this->session = $session;
         $flashcards = $this->getFlashcards();
+
+        if ($this->isFinished()) {
+            return $this->redirect('/deck/' . $packet->packet_uid);
+        }
 
         $this->set(compact('flashcards', 'session', 'packet'));
     }
@@ -56,7 +60,7 @@ class SessionsController extends AppController
         $count = 0;
         foreach ($this->packet['flashcards'] as $flashcard) {
             $count++;
-            if ($flashcard->leitner_folder == $this->session['expected_folder']) {
+            if ($flashcard->leitner_folder === $this->session['expected_folder']) {
                 $finishedCardsCount++;
             }
         }

@@ -7,7 +7,7 @@ $this->assign('title', "Session");
         <section>
             <h2 class="section-title" id="title-game">Session en cours</h2>
             <div class="containerGame">
-                <div class="game" id="game-visu-session">
+                <div class="game" id="game-visu-session" data-idPacket = <?= $packet->id ?>>
                     <div class="progress">
                         <progress value="0" max="100" id="progressBar-session"></progress>
                     </div>
@@ -15,7 +15,7 @@ $this->assign('title', "Session");
                     $firstCard = true;
                     foreach ($flashcards as $flashcard) :
                         ?>
-                        <div class="card <?= $firstCard ? 'active' : '' ?> flipped-card">
+                        <div class="card <?= $firstCard ? 'active' : '' ?> flipped-card" data-idFlashcard = <?= $flashcard->id ?>>
                                 <div class="card-front">
                                     <div class="content-flashcard">
                                         <p><?= $flashcard->question ?></p>
