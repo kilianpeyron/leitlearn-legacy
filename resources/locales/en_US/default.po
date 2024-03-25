@@ -235,6 +235,72 @@ msgstr "of Leitlearn."
 msgid "Vous n'avez pas de compte ?"
 msgstr "Don't have an account?"
 
+#modify flashcard modal english traduction
+
+msgid "Modifier la flashcard"
+msgstr "Edit the flashcard"
+
+#news modal english traduction
+
+msgid "Leitlearn 2 arrive!"
+msgstr "Leitlearn 2 is coming!"
+
+msgid "Découvrez la mise à jour Leitlearn 2 qui apporte de nombreuses nouveautés et correctifs."
+msgstr "Discover the Leitlearn 2 update that brings many new features and fixes."
+
+msgid "Cette mise à jour sera disponible entre le mois de mars et avril 2024."
+msgstr "This update will be available between March and April 2024."
+
+msgid "Voici les principales nouveautés associées à cette mise à jour :"
+msgstr "Here are the main innovations associated with this update:"
+
+msgid "Système de relations entre utilisateurs"
+msgstr "User relationship system"
+
+msgid "Découvrez les flashcards musiques et images pour mieux apprendre la géographie et les langues"
+msgstr "Discover music and image flashcards to better learn geography and languages"
+
+msgid "Importez et exportez vos paquets en CSV"
+msgstr "Import and export your decks in CSV"
+
+msgid "Une interface repensée pour une meilleure expérience utilisateur"
+msgstr "A redesigned interface for a better user experience"
+
+msgid "Et plus encore."
+msgstr "And more."
+
+msgid "Mise à jour&nbsp;&nbsp;1.0.1"
+msgstr "Update&nbsp;&nbsp;1.0.1"
+
+msgid "Cette mise à jour corrige certains problèmes majeurs avant Leitlearn 2."
+msgstr "This update addresses some major issues ahead of Leitlearn 2."
+
+#register modal english traduction
+
+msgid "Créer votre compte"
+msgstr "Create your account"
+
+msgid "Utiliser Leitlearn Ai"
+msgstr "Use Leitlearn Ai"
+
+msgid "Créez vos paquets"
+msgstr "Create your decks"
+
+msgid "Partagez avec la communauté"
+msgstr "Share with the community"
+
+msgid "Prénom"
+msgstr "First name"
+
+msgid "Nom de famille"
+msgstr "Last name"
+
+msgid "Nom d'utilisateur"
+msgstr "Username"
+
+msgid "Vous avez déjà un compte ?"
+msgstr "Already have an account?"
+
 
 
 
