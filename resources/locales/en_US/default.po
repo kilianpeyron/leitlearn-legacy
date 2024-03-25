@@ -301,6 +301,34 @@ msgstr "Username"
 msgid "Vous avez déjà un compte ?"
 msgstr "Already have an account?"
 
+#search users modal english traduction
+
+msgid "Utilisateurs"
+msgstr "Users"
+
+#update user modal english traduction
+
+msgid "Modification du profil"
+msgstr "Edit Profile"
+
+msgid "Genre"
+msgstr "Gender"
+
+msgid "Homme"
+msgstr "Male"
+
+msgid "Femme"
+msgstr "Female"
+
+msgid "Non renseigné"
+msgstr "Not specified"
+
+msgid "-- Sélectionner --"
+msgstr "-- Select --"
+
+msgid "Sauvegarder"
+msgstr "Save"
+
 
 
 
