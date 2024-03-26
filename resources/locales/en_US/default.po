@@ -459,4 +459,14 @@ msgstr "Log in to Leitlearn"
 msgid "Connectez-vous pour utiliser toutes les fonctionnalités de Leitlearn"
 msgstr "Log in to access all Leitlearn features"
 
+#register page english traduction
+
+msgid "S'inscrire sur Leitlearn"
+msgstr "Sign up on Leitlearn"
+
+msgid "Inscrivez-vous pour utiliser toutes les fonctionnalités de Leitlearn"
+msgstr "Sign up to use all the features of Leitlearn"
+
+msgid "Date de naissance"
+msgstr "Date of Birth"
 
