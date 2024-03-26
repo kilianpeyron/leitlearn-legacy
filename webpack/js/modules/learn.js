@@ -16,8 +16,8 @@ function handleBtnValidClick()
     if (btn_valid) {
         btn_valid.addEventListener('click', function () {
             let flashcard_id = active_flashcard.getAttribute('data-idflashcard');
-            let paquet_id = document.getElementById('game-visu-session').getAttribute('data-idpacket');
-            increaseLeitnerFolder(flashcard_id, paquet_id);
+            let packet_id = document.getElementById('game-visu-session').getAttribute('data-idpacket');
+            increaseLeitnerFolder(flashcard_id, packet_id);
             removeCardActiveAndFlipToNext();
             updateProgressBar();
         });
@@ -89,20 +89,40 @@ function updateProgressBar()
         //boum();
         let action_btn = document.getElementById('actions-btn')
         action_btn.style.display = 'none';
+        let packet_id = document.getElementById('game-visu-session').getAttribute('data-idpacket');
+
+        increaseSession(packet_id);
     }
 }
 
-function increaseLeitnerFolder(id_flashcard, id_packet)
+function increaseLeitnerFolder(id_flashcard, packet_id)
 {
     let csrfToken = document.body.dataset.csrfToken;
     let data = {
         _csrfToken: csrfToken,
         flashcard: id_flashcard ,
-        packet : id_packet
+        packet : packet_id
     };
     $.ajax({
         type: "POST",
         url: "/flashcards/increase",
+        data: data,
+        success: function (response) {
+            console.log(response);
+        },
+    });
+}
+
+function increaseSession(packet_id)
+{
+    let csrfToken = document.body.dataset.csrfToken;
+    let data = {
+        _csrfToken: csrfToken,
+        packet : packet_id
+    };
+    $.ajax({
+        type: "POST",
+        url: "/sessions/increase",
         data: data,
         success: function (response) {
             console.log(response);

@@ -22,25 +22,23 @@ $this->assign('title', $packet->name);
                         [
                             'confirm' => 'Êtes-vous sur de vouloir exporter le paquet ?',
                             'class' => 'action play-hidden',
-                            'escapeTitle' => false
+                            'escapeTitle' => false,
                         ]
                     ) ?>
-                    <?php if($flashcards_numb != 0) : ?>
+                    <?php if ($flashcards_numb != 0) : ?>
                     <button class="action play hidden" id="btn-retour">
                         Retour au paquet
                         <span class="material-symbols-rounded">
                             web_traffic
                         </span>
                     </button>
-                        <?= $this->Html->link(
-                        'Lancer <span class="material-symbols-rounded">arrow_selector_tool</span>',
-                        ['controller' => 'Sessions', 'action' => 'index',$session->session_uid],
-                        [
-                            'class' => 'action play btnPlay ' . $handlePlayBtn,
-                            'escapeTitle' => false,
-                            'id' => 'btn-play'
-                        ]
-                    ) ?>
+                        <?=
+                        $this->Form->postLink(
+                            'Lancer <span class="material-symbols-rounded">undo</span>',
+                            ['controller' => 'Sessions', 'action' => 'createOrRedirect', $packet->id],
+                            ['class' => 'action play btnPlay create-session-btn', 'escapeTitle' => false]
+                        );
+                        ?>
 
                         <p class="<?= $handleRemainingTime ?>" id="remainingTime"></p>
                     <?php endif; ?>
@@ -64,14 +62,14 @@ $this->assign('title', $packet->name);
                         [
                             'confirm' => 'Êtes-vous sur de vouloir exporter le paquet ?',
                             'class' => 'action play-hidden',
-                            'escapeTitle' => false
+                            'escapeTitle' => false,
                         ]
                     ) ?>
                 <?php endif; ?>
             </div>
         </div>
 
-        <?php if($flashcards_numb != 0) : ?>
+        <?php if ($flashcards_numb != 0) : ?>
         <section>
             <h2 class="section-title" id="title-game">Visualisation du jeu</h2>
             <div class="containerGame">
@@ -184,7 +182,7 @@ $this->assign('title', $packet->name);
                 </div>
             </h2>
             <div class="flashcards play-hidden">
-                <?php if($flashcards_numb == 0) : ?>
+                <?php if ($flashcards_numb == 0) : ?>
                     <span>Vous n'avez aucune carte.</span>
                 <?php endif; ?>
                 <?php foreach ($packet->flashcards as $flashcard) : ?>
@@ -247,7 +245,7 @@ $this->assign('title', $packet->name);
             </div>
         </section>
 
-        <?php if ($is_my_packet &&  $flashcards_numb != 0) : ?>
+        <?php if ($is_my_packet && $flashcards_numb != 0) : ?>
             <section class="play-hidden charts">
                 <h2 class="section-title">Visualisation de l'avancement</h2>
                 <canvas id="barChart"></canvas>

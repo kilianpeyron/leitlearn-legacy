@@ -9,17 +9,18 @@ $this->assign('title', 'Session');
                 <?= $packet->name ?>
             </h1>
             <div class="actions" id="play-actions-btn">
-                        <?= $this->Html->link(
-                            'Retour <span class="material-symbols-rounded">undo</span>',
-                            '/deck/' . $packet->packet_uid,
-                            [
-                            'class' => 'action play btnPlay ',
-                            'escapeTitle' => false,
-                            'id' => 'btn-play',
-                            ]
-                        ) ?>
+                <?= $this->Html->link(
+                    'Retour <span class="material-symbols-rounded">undo</span>',
+                    '/deck/' . $packet->packet_uid,
+                    [
+                        'class' => 'action play btnPlay ',
+                        'escapeTitle' => false,
+                        'id' => 'btn-play',
+                    ]
+                ) ?>
 
             </div>
+
         </div>
         <section>
             <h2 class="session-title" id="title-game">Session en cours</h2>
