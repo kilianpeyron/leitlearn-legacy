@@ -13,6 +13,7 @@ use Cake\Validation\Validator;
  *
  * @property \App\Model\Table\UsersTable&\Cake\ORM\Association\BelongsTo $Users
  * @property \App\Model\Table\FlashcardsTable&\Cake\ORM\Association\HasMany $Flashcards
+ * @property \App\Model\Table\SessionsTable&\Cake\ORM\Association\HasMany $Sessions
  * @property \App\Model\Table\KeywordsTable&\Cake\ORM\Association\BelongsToMany $Keywords
  *
  * @method \App\Model\Entity\Packet newEmptyEntity()
@@ -56,6 +57,12 @@ class PacketsTable extends Table
         $this->hasMany('Flashcards', [
             'foreignKey' => 'packet_id',
         ]);
+        $this->hasMany('Likes', [
+            'foreignKey' => 'packet_id',
+        ]);
+        $this->hasMany('Sessions', [
+            'foreignKey' => 'packet_id',
+        ]);
         $this->belongsToMany('Keywords', [
             'foreignKey' => 'packet_id',
             'targetForeignKey' => 'keyword_id',
@@ -93,8 +100,8 @@ class PacketsTable extends Table
             ->notEmptyString('importation_count');
 
         $validator
-            ->boolean('public')
-            ->notEmptyString('public');
+            ->integer('status')
+            ->notEmptyString('status');
 
         $validator
             ->boolean('ia')

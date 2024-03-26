@@ -70,6 +70,7 @@
                     <li class="footer-link">
                         <?= $this->Html->link(
                             __('Mon profil'),
+                            '/user/'.$user_data['user_uid'],
                             '/user/me',
                             ['escape' => false]
                         ) ?>
@@ -118,15 +119,22 @@
                 <span>Leitlearn</span>
                 <li class="footer-link">
                     <?= $this->Html->link(
-                        __('À-propos'),
-                        '/about',
+                        'Mentions légales',
+                        '/legal',
                         ['escape' => false]
                     ) ?>
                 </li>
                 <li class="footer-link">
                     <?= $this->Html->link(
                         __('Contactez-nous'),
-                        '/contact',
+                        'mailto:kilianpeyn@gmail.com',
+                        ['escape' => false]
+                    ) ?>
+                </li>
+                <li class="footer-link">
+                    <?= $this->Html->link(
+                        __('Gérer les cookies'),
+                        'javascript:openAxeptioCookies()',
                         ['escape' => false]
                     ) ?>
                 </li>
@@ -134,7 +142,7 @@
         </ul>
         <div class="separator"></div>
         <div class="copyright">
-            <?= $this->Html->image('/img/leitlearn_2_logo.png') ?>
+            <?= $this->Html->image('/img/leitlearn_2_logo.webp') ?>
             &copy; 2023-2024 Leitlearn.com
         </div>
     </div>

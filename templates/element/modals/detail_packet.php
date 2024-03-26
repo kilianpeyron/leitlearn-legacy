@@ -8,6 +8,9 @@
                 </span>
             </div>
         </div>
+        <div class="loader-container" id="detail-modal-loader">
+            <span class="loader"></span>
+        </div>
         <div class="modal-body">
             <div class="detail">
                 <div class="creator-infos">
@@ -23,6 +26,9 @@
                             <div class="keys" id="modal-detail-keys"></div>
                         </div>
                     </div>
+                    <?php if ($is_logged) : ?>
+                        <?= $this->cell('FeatureFlags::display', ['packet_modal_like_dislike']); ?>
+                    <?php endif; ?>
                     <div class="information">
                         <div class="data">
                             <span><?= __('Créateur du paquet') ?></span>
