@@ -20,12 +20,12 @@ $this->assign('title', $packet->name);
                         '<span class="material-symbols-rounded">ios_share</span>',
                         ['controller' => 'Packets', 'action' => 'export', $packet->id],
                         [
-                            'confirm' => 'Êtes-vous sur de vouloir exporter le paquet ?',
+                            'confirm' => __('Êtes-vous sûr de vouloir exporter le paquet ?'),
                             'class' => 'action play-hidden',
-                            'escapeTitle' => false
+                            'escapeTitle' => false,
                         ]
                     ) ?>
-                    <?php if($flashcards_numb != 0) : ?>
+                    <?php if ($flashcards_numb != 0) : ?>
                     <button class="action play hidden" id="btn-retour">
                         Retour au paquet
                         <span class="material-symbols-rounded">
@@ -42,15 +42,15 @@ $this->assign('title', $packet->name);
                     <?php endif; ?>
                 <?php elseif (!$is_my_packet && !$is_private) : ?>
                     <?= $this->Form->postLink(
-                        '<button class="action play">
-                                Importer le paquet
+                        '<button class="action play">' .
+                                 __('Importer le paquet') . '
                                 <span class="material-symbols-rounded">
                                       cloud_upload
                                 </span>
                               </button>',
                         ['controller' => 'Packets', 'action' => 'import', $packet->id],
                         [
-                            'confirm' => 'Êtes-vous sur de vouloir importer le paquet ?',
+                            'confirm' => __('Êtes-vous sûr de vouloir importer le paquet ?'),
                             'escapeTitle' => false,
                         ]
                     ) ?>
@@ -58,16 +58,16 @@ $this->assign('title', $packet->name);
                         '<span class="material-symbols-rounded">ios_share</span>',
                         ['controller' => 'Packets', 'action' => 'export', $packet->id],
                         [
-                            'confirm' => 'Êtes-vous sur de vouloir exporter le paquet ?',
+                            'confirm' => __('Êtes-vous sûr de vouloir exporter le paquet ?'),
                             'class' => 'action play-hidden',
-                            'escapeTitle' => false
+                            'escapeTitle' => false,
                         ]
                     ) ?>
                 <?php endif; ?>
             </div>
         </div>
 
-        <?php if($flashcards_numb != 0) : ?>
+        <?php if ($flashcards_numb != 0) : ?>
         <section>
             <h2 class="section-title" id="title-game">Visualisation du jeu</h2>
             <div class="containerGame">
@@ -180,7 +180,7 @@ $this->assign('title', $packet->name);
                 </div>
             </h2>
             <div class="flashcards play-hidden">
-                <?php if($flashcards_numb == 0) : ?>
+                <?php if ($flashcards_numb == 0) : ?>
                     <span>Vous n'avez aucune carte.</span>
                 <?php endif; ?>
                 <?php foreach ($packet->flashcards as $flashcard) : ?>
@@ -243,7 +243,7 @@ $this->assign('title', $packet->name);
             </div>
         </section>
 
-        <?php if ($is_my_packet &&  $flashcards_numb != 0) : ?>
+        <?php if ($is_my_packet && $flashcards_numb != 0) : ?>
             <section class="play-hidden charts">
                 <h2 class="section-title">Visualisation de l'avancement</h2>
                 <canvas id="barChart"></canvas>
