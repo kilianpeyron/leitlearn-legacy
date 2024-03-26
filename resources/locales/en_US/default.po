@@ -184,13 +184,13 @@ msgid "Paquet"
 msgstr "Deck"
 
 msgid "Cartes"
-msgstr "Cards"
+msgstr "Flashcards"
 
 msgid "Importer le paquet sur mon espace"
 msgstr "Import the deck to my space"
 
 msgid "Importer la/les cartes"
-msgstr "Import the card(s)"
+msgstr "Import the flashcard(s)"
 
 #import paquet modal english traduction
 
@@ -349,7 +349,7 @@ msgstr "Change Password"
 #display cell english traduction
 
 msgid "cartes"
-msgstr "cards"
+msgstr "flashcards"
 
 msgid "Paquet généré avec l'intelligence artificielle"
 msgstr "Deck generated with artificial intelligence"
@@ -498,3 +498,163 @@ msgstr "Account Deletion"
 
 msgid "Supprimer"
 msgstr "Delete"
+
+#view user profile english traduction
+
+msgid "Accepter la demande en amis"
+msgstr "Accept friend request"
+
+msgid "Refuser la demande en amis"
+msgstr "Decline friend request"
+
+msgid "Vous êtes amis ensemble."
+msgstr "You are friends together."
+
+msgid "Ajouter en amis"
+msgstr "Add as friend"
+
+msgid "Supprimer des amis"
+msgstr "Remove friend"
+
+msgid "Paquets"
+msgstr "Decks"
+
+msgid "Réservés aux amis"
+msgstr "Reserved for friends"
+
+msgid "Générés avec l'IA"
+msgstr "Generated with AI"
+
+msgid "Amis"
+msgstr "Friends"
+
+#view deck english traduction
+
+msgid "Retour au paquet"
+msgstr "Back to Deck"
+
+msgid "Lancer"
+msgstr "Launch"
+
+msgid "Visualisation du paquet"
+msgstr "Deck Preview"
+
+msgid "Vous avez terminé"
+msgstr "You have finished"
+
+msgid "Vous n'avez aucune carte."
+msgstr "You have no flashcards."
+
+msgid "Jouable dans..."
+msgstr "Playable in..."
+
+msgid "Le contenu de la carte est verrouillé"
+msgstr "The content of the card is locked"
+
+msgid "Modifier la carte"
+msgstr "Edit card"
+
+msgid "Supprimer la carte"
+msgstr "Delete card"
+
+msgid "Visualisation de l'avancement"
+msgstr "Progress overview"
+
+msgid "Paramètres de jeu"
+msgstr "Game settings"
+
+msgid "Nombre de flashcards par dossier Leitner"
+msgstr "Number of flashcards per Leitner folder"
+
+msgid "Méthode par répétition (Leitner)"
+msgstr "Spaced repetition method (Leitner)"
+
+msgid "Algorithme pour apprendre sur une longue période. Basé sur la méthode de Leitner cette méthode vous permet d'apprendre en 7 jours vos cartes efficacement."
+msgstr "Algorithm for long-term learning. Based on the Leitner method, this method allows you to effectively learn your cards in 7 days."
+
+msgid "Nombre de flashcards"
+msgstr "Number of flashcards"
+
+msgid "Crée le"
+msgstr "Created on"
+
+msgid "Crée par"
+msgstr "Created by"
+
+
+#legal page english traduction
+
+msgid "Mentions légales"
+msgstr "Legal notice"
+
+msgid "Éditeurs du site :"
+msgstr "Site editors:"
+
+msgid "Nom : Kilian PEYRON, Léo TRUX, Aiman MANCHOUT, Louis GERNEZ"
+msgstr "Name: Kilian PEYRON, Léo TRUX, Aiman MANCHOUT, Louis GERNEZ"
+
+msgid "Adresse : Basé à Bourg-en-Bresse, France"
+msgstr "Address: Based in Bourg-en-Bresse, France"
+
+msgid "E-mail : kilianpeyn@gmail.com"
+msgstr "Email: kilianpeyn@gmail.com"
+
+msgid "Responsable de la publication : Kilian PEYRON"
+msgstr "Publication manager: Kilian PEYRON"
+
+msgid "Hébergeur du site :"
+msgstr "Site host:"
+
+msgid "SAS PulseHeberg"
+msgstr "SAS PulseHeberg"
+
+msgid "9 Boulevard de Strasbourg"
+msgstr "9 Boulevard de Strasbourg"
+
+msgid "83000 Toulon"
+msgstr "83000 Toulon"
+
+msgid "Société par Action Simplifiée"
+msgstr "Simplified Joint Stock Company"
+
+msgid "SIRET : 824 070 619 00039"
+msgstr "SIRET: 824 070 619 00039"
+
+msgid "Protection des données personnelles :"
+msgstr "Personal data protection:"
+
+msgid "Conformément à la loi \"Informatique et Libertés\" du 6 janvier 1978 modifiée et au Règlement Général sur la Protection des Données (RGPD) (UE) 2016/679, vous disposez d'un droit d'accès, de rectification et de suppression des données personnelles vous concernant. Pour exercer ce droit, veuillez contacter : kilianpeyn@gmail.com."
+msgstr "In accordance with the amended \"Computer and Freedoms\" law of January 6, 1978 and the General Data Protection Regulation (GDPR) (EU) 2016/679, you have the right to access, rectify and delete personal data concerning you. To exercise this right, please contact: kilianpeyn@gmail.com."
+
+msgid "Propriété intellectuelle :"
+msgstr "Intellectual property:"
+
+msgid "Le contenu de ce site web (textes, images, vidéos, etc.) est protégé par le droit de la propriété intellectuelle. Toute reproduction, totale ou partielle, est strictement interdite sans autorisation préalable des développeurs."
+msgstr "The content of this website (texts, images, videos, etc.) is protected by intellectual property law. Any total or partial reproduction is strictly prohibited without prior authorization from the developers."
+
+msgid "Responsabilité :"
+msgstr "Responsibility:"
+
+msgid "Les développeurs du site ne peuvent être tenus responsables des erreurs présentes sur le site, ni des éventuels dommages directs ou indirects pouvant résulter de l'utilisation du site ou de son contenu."
+msgstr "The site developers cannot be held responsible for errors on the site, nor for any direct or indirect damages that may result from the use of the site or its content."
+
+msgid "Liens hypertextes :"
+msgstr "Hyperlinks:"
+
+msgid "Ce site peut contenir des liens hypertextes vers d'autres sites internet. Les développeurs du site ne peuvent être tenus responsables du contenu de ces sites, ni des éventuels dommages pouvant résulter de leur utilisation."
+msgstr "This site may contain hyperlinks to other websites. The site developers cannot be held responsible for the content of these sites, nor for any damages that may result from their use."
+
+msgid "Cookies :"
+msgstr "Cookies:"
+
+msgid "Ce site peut utiliser des cookies pour améliorer l'expérience utilisateur. En naviguant sur ce site, vous acceptez l'utilisation des cookies conformément à notre politique en matière de cookies."
+msgstr "This site may use cookies to improve the user experience. By browsing this site, you accept the use of cookies in accordance with our cookie policy."
+
+msgid "Loi applicable et juridiction compétente :"
+msgstr "Applicable law and competent jurisdiction:"
+
+msgid "Les présentes mentions légales sont soumises au droit français. En cas de litige, les tribunaux français seront seuls compétents."
+msgstr "These legal notices are subject to French law. In the event of a dispute, the French courts shall have sole jurisdiction."
+
+msgid "Date de dernière mise à jour :"
+msgstr "Last update date:"
