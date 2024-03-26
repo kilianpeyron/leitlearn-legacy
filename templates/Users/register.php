@@ -43,7 +43,7 @@
                         <?php //$this->Form->select('update-birth-year', array_combine(range(1900, $currentYear), range(1900, $currentYear)), ['id' => 'year']) ?>
                     </div>
                 </div>
-                <?= $this->Form->submit("S'inscrire") ?>
+                <?= $this->Form->submit(__("S'inscrire")) ?>
                 <?= $this->Form->end() ?>
             </div>
         </div>
