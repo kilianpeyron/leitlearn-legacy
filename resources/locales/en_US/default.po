@@ -345,3 +345,14 @@ msgstr "Confirm New Password"
 
 msgid "Modifier le mot de passe"
 msgstr "Change Password"
+
+#display cell
+
+msgid "cartes"
+msgstr "cards"
+
+msgid "Paquet généré avec l'intelligence artificielle"
+msgstr "Package generated with artificial intelligence"
+
+msgid "Paquet généré avec l'intelligence artificielle"
+msgstr "Package generated with artificial intelligence"
