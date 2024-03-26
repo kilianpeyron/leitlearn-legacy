@@ -82,7 +82,13 @@ class PacketsController extends AppController
         catch (RecordNotFoundException $e) {
             $creator = $this->Packets->Users->get($packet->user_id);
         }
-        $session = $packet->sessions[0];
+        if($packet->session == [])
+        {
+            $session = null;
+        } else {
+            $session = $packet->sessions[0];
+        }
+
 
         $this->set(compact('packet', 'date', 'handlePlayBtn', 'handleRemainingTime', 'is_private', 'is_my_packet', 'leitlearn_folders', 'creator', 'flashcards_numb', 'session'));
     }
@@ -327,7 +333,9 @@ class PacketsController extends AppController
                 $packet->keywords = $keywordsEntities;
             }
 
-            if ($this->Packets->save($packet, ['associated' => ['Keywords']])) {
+
+
+            if ($this->Packets->save($packet, ['associated' => ['Keywords','Sessions']])) {
                 $this->Flash->success('Votre paquet a été créé avec succès.');
             } else {
                 $this->Flash->error('Une erreur s\'est produite lors de la création du paquet.');
@@ -652,4 +660,5 @@ class PacketsController extends AppController
 
         return $result;
     }
+
 }
