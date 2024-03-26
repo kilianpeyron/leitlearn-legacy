@@ -412,3 +412,51 @@ msgstr "Your decks"
 msgid "Rechercher sur Leitlearn"
 msgstr "Search on Leitlearn"
 
+
+#settings english traduction
+
+msgid "Paramètre de"
+msgstr "Settings of"
+
+msgid "Informations"
+msgstr "Information"
+
+msgid "Nom"
+msgstr "Name"
+
+msgid "Visibilité du paquet"
+msgstr "Deck Visibility"
+
+msgid "Autres"
+msgstr "Others"
+
+msgid "Suppression du paquet"
+msgstr "Delete the deck"
+
+msgid "Supprimer le paquet"
+msgstr "Delete"
+
+msgid "Êtes-vous sûr de vouloir supprimer le paquet ?"
+msgstr "Are you sure you want to delete the deck?"
+
+msgid "Êtes-vous sûr de vouloir exporter le paquet ?"
+msgstr "Are you sure you want to export the deck?"
+
+msgid "Importer le paquet"
+msgstr "Import the deck"
+
+msgid "Êtes-vous sûr de vouloir importer le paquet ?"
+msgstr "Are you sure you want to import the deck?"
+
+msgid "Êtes-vous sûr de vouloir exporter le paquet ?"
+msgstr "Are you sure you want to export the deck?"
+
+#login page english traduction
+
+msgid "Se connecter à Leitlearn"
+msgstr "Log in to Leitlearn"
+
+msgid "Connectez-vous pour utiliser toutes les fonctionnalités de Leitlearn"
+msgstr "Log in to access all Leitlearn features"
+
+
