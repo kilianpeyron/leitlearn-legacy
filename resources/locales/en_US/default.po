@@ -470,3 +470,25 @@ msgstr "Sign up to use all the features of Leitlearn"
 msgid "Date de naissance"
 msgstr "Date of Birth"
 
+#settings page english traduction
+
+msgid "Mon Compte"
+msgstr "My Account"
+
+msgid "Mes informations générales"
+msgstr "My general information"
+
+msgid "Mes coordonnées"
+msgstr "My contact details"
+
+msgid "Sécurité"
+msgstr "Security"
+
+msgid "Adresse email"
+msgstr "Email address"
+
+msgid "Suppression de compte"
+msgstr "Account Deletion"
+
+msgid "Supprimer"
+msgstr "Delete"
