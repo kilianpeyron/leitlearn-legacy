@@ -67,9 +67,9 @@ $this->assign('title', $packet->name);
             </div>
         </div>
 
-        <?php if ($flashcards_numb != 0) : ?>
+        <?php if($flashcards_numb != 0 && ($is_private && $is_my_packet) || (!$is_private)): ?>
         <section>
-            <h2 class="section-title" id="title-game">Visualisation du jeu</h2>
+            <h2 class="section-title" id="title-game">Visualisation du paquet</h2>
             <div class="containerGame">
                 <div class="game" id="game-visu">
                     <div class="progress">
@@ -85,22 +85,10 @@ $this->assign('title', $packet->name);
                                     <div class="content-flashcard">
                                         <p><?= $flashcard->question ?></p>
                                     </div>
-                                    <?php
-                                    if ($flashcard->media != null) :
-                                        $ext = pathinfo($flashcard->media, PATHINFO_EXTENSION);
-                                        if (strtolower($ext) === 'mp3') :
-                                            echo '<audio controls src="' . $flashcard->media . '"></audio>';
-                                        elseif (in_array(strtolower($ext), ['jpg', 'jpeg', 'png', 'gif'])) :
-                                            echo '<img src="https://static.leitlearn.com/img/market.jpg" alt="Media">';
-                                        else :
-                                            echo 'Le type du fichier n\'est pas pris en charge ou n\'est ni un MP3 ni une image.';
-                                        endif;
-                                    endif;
-                                    ?>
                                 </div>
                                 <div class="card-back">
                                     <div class="content-flashcard">
-                                        <p><?= $flashcard->question ?></p>
+                                        <p><?= $flashcard->answer ?></p>
                                     </div>
                                 </div>
                             <?php else :
@@ -202,7 +190,7 @@ $this->assign('title', $packet->name);
                                 </div>
                             </div>
                         <?php else : ?>
-                            <div class="question"><i class="fa-solid fa-lock"></i>&nbsp;&nbsp;Le contenu de la flashcard est verrouillé</div>
+                            <div class="question"><i class="fa-solid fa-lock"></i>&nbsp;&nbsp;Le contenu de la carte est verrouillé</div>
                         <?php endif; ?>
                         <?php if ($is_my_packet) : ?>
                             <div class="flashcard-actions">

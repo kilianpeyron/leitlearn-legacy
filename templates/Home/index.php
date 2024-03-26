@@ -1,13 +1,14 @@
 <?php
 $this->assign('title', 'Apprenez grâce aux flashcards');
+echo $this->cell('FeatureFlags::display', ['test_feature_flags']);
 ?>
 <header>
     <div class="header-content">
         <div class="logo">
-            <?= $this->Html->image('/img/leitlearn_2_logo.png', ['alt' => 'Leitlearn 2']) ?>
+            <?= $this->Html->image('https://static.leitlearn.com/v2/img/leitlearn_2_logo.webp', ['alt' => 'Leitlearn 2']) ?>
         </div>
         <div class="new leitlearn-2">
-            <?= $this->Html->image('/img/leitlearn_2_logo.png', ['alt' => 'Leitlearn 2']) ?>
+            <?= $this->Html->image('https://static.leitlearn.com/v2/img/leitlearn_2_logo.webp', ['alt' => 'Leitlearn 2']) ?>
             <?= __('est disponible') ?>
         </div>
         <h1 class="title"><?= __('Vous avez le pouvoir d\'apprendre.') ?></h1>
@@ -29,7 +30,7 @@ $this->assign('title', 'Apprenez grâce aux flashcards');
         <?php endif; ?>
     </div>
     <video autoplay muted loop id="header-video">
-        <source src="/videos/header.mp4" type="video/mp4">
+        <source src="https://static.leitlearn.com/v2/videos/header.mp4" type="video/mp4">
         <?= __('Your browser does not support the video tag.') ?>
     </video>
 </header>

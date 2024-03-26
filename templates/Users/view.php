@@ -101,7 +101,7 @@ if ($user->user_uid != $user_data['user_uid']) {
             </div>
             <div class="scroll-menu">
                 <div class="scroll-content">
-                    <?= $cell = $this->cell('Packets::display', ['my_no_ia', $user->id, 'dashboard']) ?>
+                    <?= $cell = $this->cell('Packets::display', ['my_no_ia_public', $user->id, 'dashboard']) ?>
                 </div>
             </div>
         </section>
@@ -149,7 +149,7 @@ if ($user->user_uid != $user_data['user_uid']) {
             </div>
             <div class="scroll-menu">
                 <div class="scroll-content">
-                    <?= $cell = $this->cell('Packets::display', ['my_ia', $user->id, 'dashboard']) ?>
+                    <?= $cell = $this->cell('Packets::display', ['my_ia_public', $user->id, 'dashboard']) ?>
                 </div>
             </div>
         </section>
