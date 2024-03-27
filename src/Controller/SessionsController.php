@@ -41,7 +41,7 @@ class SessionsController extends AppController
         $now = new DateTime();
         $flashcards = [];
         foreach ($this->packet['flashcards'] as $flashcard) {
-            if ($now >= $flashcard['arrived'] && $flashcards['leitner_folder'] < 7) {
+            if ($now >= $flashcard['arrived'] && $flashcard['leitner_folder'] < 7) {
                 $flashcards[] = $flashcard;
             }
         }

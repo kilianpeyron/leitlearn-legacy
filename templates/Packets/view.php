@@ -44,9 +44,7 @@ $this->assign('title', $packet->name);
                             ?>
                         <?php endif; ?>
 
-                        <?php if (isset($date) && ($now < $date)) : ?>
-                            <p class="<?= $handleRemainingTime ?>" id="remainingTime"></p>
-                        <?php else : ?>
+                        <?php if (!isset($date) || ($now > $date)) : ?>
                             <?= $this->Form->postLink(
                                 'Lancer <span class="material-symbols-rounded">undo</span>',
                                 ['controller' => 'Sessions', 'action' => 'createOrRedirect', $packet->id],
