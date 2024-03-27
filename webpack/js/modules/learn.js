@@ -89,9 +89,6 @@ function updateProgressBar()
         boum();
         let action_btn = document.getElementById('actions-btn')
         action_btn.style.display = 'none';
-        let packet_id = document.getElementById('game-visu-session').getAttribute('data-idpacket');
-        increaseSession(packet_id);
-
     }
 }
 
@@ -109,26 +106,6 @@ function increaseLeitnerFolder(id_flashcard, packet_id)
     $.ajax({
         type: "POST",
         url: "/flashcards/increase",
-        data: data,
-        success: function (response) {
-            console.log(response);
-        },
-    });
-}
-
-/**
- * Met à jour le dossier leitner de la session.
- */
-function increaseSession(packet_id)
-{
-    let csrfToken = document.body.dataset.csrfToken;
-    let data = {
-        _csrfToken: csrfToken,
-        packet : packet_id
-    };
-    $.ajax({
-        type: "POST",
-        url: "/sessions/increase",
         data: data,
         success: function (response) {
             console.log(response);
