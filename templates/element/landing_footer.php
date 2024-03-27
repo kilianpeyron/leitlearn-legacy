@@ -21,9 +21,8 @@
         <div class="languages">
             <h4><?= __('Langue') ?></h4>
             <ul class="links">
-                <li class="link"><?= __('Français') ?></li>
-                <li class="link"><?= __('Anglais') ?></li>
-                <li class="link"><?= __('Espagnol') ?></li>
+                <li class="link"><?=$this->Html->link(__('Français'), ['controller' => 'Lang', 'action' => 'change', 'fr_FR'])?></li>
+                <li class="link"><?= $this->Html->link(__('Anglais'), ['controller' => 'Lang', 'action' => 'change', 'en_US']) ?></li>
             </ul>
         </div>
         <div class="social">

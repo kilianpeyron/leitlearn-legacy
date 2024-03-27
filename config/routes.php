@@ -62,6 +62,8 @@ return function (RouteBuilder $routes): void {
         // Legal
         $builder->connect('/legal', ['controller' => 'Pages', 'action' => 'display', 'legal']);
 
+        //Langue
+        $builder->connect('/lang/change-language/*', ['controller' => 'Lang', 'action' => 'changeLanguage']);
         /*
          * ...and connect the rest of 'Pages' controller's URLs.
          */

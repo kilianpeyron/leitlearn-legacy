@@ -15,6 +15,8 @@
  * @var \App\View\AppView $this
  */
 
+use Cake\I18n\I18n;
+
 $cakeDescription = ' - Leitlearn';
 ?>
 <!DOCTYPE html>

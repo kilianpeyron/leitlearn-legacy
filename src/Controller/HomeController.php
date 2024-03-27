@@ -11,7 +11,6 @@ class HomeController extends AppController
 {
     public function initialize(): void
     {
-        I18n::setLocale('en_US');
         parent::initialize();
         $this->viewBuilder()->setLayout('home_market');
     }

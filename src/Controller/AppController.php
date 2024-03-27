@@ -19,6 +19,7 @@ namespace App\Controller;
 
 use App\Utility\AppSingleton;
 use Cake\Controller\Controller;
+use Cake\I18n\I18n;
 use Cake\ORM\Query\SelectQuery;
 
 /**
@@ -52,6 +53,11 @@ class AppController extends Controller
         $app = AppSingleton::getInstance();
         $user_data = $app->getUser($this->request->getSession());
         $is_logged = $this->request->getSession()->check('Auth.id');
+
+        $lang = $this->request->getSession()->read('lang');
+        if ($lang) {
+            I18n::setLocale($lang);
+        }
 
         $this->set(compact('app', 'user_data', 'is_logged'));
 
