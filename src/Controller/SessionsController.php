@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use Cake\Datasource\Exception\RecordNotFoundException;
+use Cake\I18n\FrozenTime;
 use DateTime;
 
 class SessionsController extends AppController
@@ -46,15 +47,17 @@ class SessionsController extends AppController
 
     public function getFlashcards()
     {
+        $now = new DateTime();
         $flashcards = [];
         foreach ($this->packet['flashcards'] as $flashcard) {
-            if ($flashcard->leitner_folder === $this->session['expected_folder'] - 1) {
+            if ($now >= $flashcard['arrived']) {
                 $flashcards[] = $flashcard;
             }
         }
 
         return $flashcards;
     }
+
 
     public function increase()
     {

@@ -6,6 +6,10 @@ namespace App\Controller;
 use App\Utility\AppSingleton;
 use Cake\Datasource\Exception\RecordNotFoundException;
 use Cake\Http\Response;
+use Cake\I18n\DateTime;
+use Cake\I18n\FrozenTime;
+use Cake\I18n\Time;
+use DateInterval;
 
 class FlashcardsController extends AppController
 {
@@ -133,7 +137,7 @@ class FlashcardsController extends AppController
      */
     public function increase()
     {
-            $this->autoRender = false; // Désactive le rendu automatique de la vue
+            $this->autoRender = false;
             $this->response = $this->response->withType('application/json');
             $data = $this->request->getData();
 
@@ -143,10 +147,18 @@ class FlashcardsController extends AppController
         if ($flashcard && $this->matchUserWithPacket($this->request->getSession()->read('Auth.id'), $packet->packet_uid)) {
             $data_flashcard['leitner_folder'] = $flashcard->leitner_folder += 1;
 
+
+
+            $now = FrozenTime::now();
+            $days_to_add = $data_flashcard['leitner_folder'];
+            $now = $now->modify('+' .$days_to_add . ' days');
+            $data_flashcard['arrived'] = $now;
+
+
             $this->Flashcards->patchEntity($flashcard, $data_flashcard);
 
             if ($this->Flashcards->save($flashcard)) {
-                $response = $this->Flashcards->save($flashcard);
+                $response = $data_flashcard['arrived'];
             } else {
                 $response = ['status' => 'error', 'message' => 'La mise à jour a échoué.'];
             }

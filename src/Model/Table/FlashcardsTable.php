@@ -81,6 +81,10 @@ class FlashcardsTable extends Table
             ->allowEmptyString('media');
 
         $validator
+            ->dateTime('arrived')
+            ->notEmptyDateTime('arrived');
+
+        $validator
             ->integer('leitner_folder')
             ->notEmptyString('leitner_folder');
 
