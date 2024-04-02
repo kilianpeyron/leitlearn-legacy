@@ -30,7 +30,7 @@
             <ul class="links">
                 <li class="link">
                     <?= $this->Html->link(
-                        $this->Html->image('https://static.leitlearn.com/img/x-social-media-white-icon.webp', ['alt' => 'X']),
+                        $this->Html->image('https://static.kilianpeyron.fr/leitlearn/img/x-social-media-white-icon.webp', ['alt' => 'X']),
                         'https://x.com/Leitlearn',
                         ['class' => 'social', 'target' => '_blank', 'escapeTitle' => false]
                     ) ?>
@@ -102,6 +102,14 @@
                     <?= $this->Html->link(
                         __('Statut des serveurs'),
                         'https://leitlearn.instatus.com/',
+                        ['escape' => false]
+                    ) ?>
+                </li>
+                <li class="footer-link">
+                    <?= $this->Html->link(
+                        __('Trello'),
+                        'https://trello.com/b/iUvzfXzs/leitlearn',
+                        ['target' => '_blank'],
                         ['escape' => false]
                     ) ?>
                 </li>

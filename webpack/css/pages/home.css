@@ -510,6 +510,29 @@ footer button:active,
     footer button {
         padding: 10px 15px;
     }
+
+    .section-feature.new {
+        height: 350px;
+    }
+
+    .section-feature.new .desc {
+        padding: 0 15px;
+    }
+
+    .section-feature.new .desc,
+    .section-features .feature .content .desc {
+        font-size: 15px;
+    }
+
+    .section-feature .title,
+    .section-features .feature .content .title{
+        font-size: 45px;
+        line-height: 55px;
+    }
+
+    .section-feature.new .title {
+        max-width: 300px;
+    }
 }
 
 @media screen and (max-width: 513px) {
