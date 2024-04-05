@@ -1,3 +1,6 @@
+<?php
+$this->assign('title', 'Inscription');
+?>
 <main>
     <div class="auth-form">
         <div class="auth-form-container">
@@ -7,7 +10,7 @@
                         close
                     </span>
                 </div>
-                <?= $this->Html->image('https://static.leitlearn.com/v2/img/leitlearn_2_logo.webp', ['class' => 'logo', 'alt' => 'Leitlearn 2']) ?>
+                <?= $this->Html->image('https://static.kilianpeyron.fr/leitlearn/img/leitlearn_2_logo.webp', ['class' => 'logo', 'alt' => 'Leitlearn 2']) ?>
             </div>
             <div class="auth-form-body">
                 <h3 class="title"><?= __('S\'inscrire sur Leitlearn') ?></h3>
@@ -34,14 +37,6 @@
                 <div class="input-group">
                     <?= $this->Form->password('password', ['id' => 'login-page-password', 'placeholder' => '']) ?>
                     <?= $this->Form->label('login-page-password', __('Mot de passe')) ?>
-                </div>
-                <div class="birth">
-                    <h3 class="info"><?= __('Date de naissance') ?></h3>
-                    <div class="selects">
-                        <?php // $this->Form->select('update-birth-day', array_combine(range(1, 31), range(1, 31)), ['id' => 'day']) ?>
-                        <?php // $this->Form->select('update-birth-month', $months, ['id' => 'month']) ?>
-                        <?php //$this->Form->select('update-birth-year', array_combine(range(1900, $currentYear), range(1900, $currentYear)), ['id' => 'year']) ?>
-                    </div>
                 </div>
                 <?= $this->Form->submit(__("S'inscrire")) ?>
                 <?= $this->Form->end() ?>

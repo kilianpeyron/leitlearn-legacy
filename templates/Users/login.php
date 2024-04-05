@@ -1,3 +1,6 @@
+<?php
+$this->assign('title', 'Connexion');
+?>
 <main>
     <div class="auth-form">
         <div class="auth-form-container">
@@ -7,7 +10,7 @@
                         close
                     </span>
                 </div>
-                <?= $this->Html->image('https://static.leitlearn.com/v2/img/leitlearn_2_logo.webp', ['class' => 'logo', 'alt' => 'Leitlearn 2']) ?>
+                <?= $this->Html->image('https://static.kilianpeyron.fr/leitlearn/img/leitlearn_2_logo.webp', ['class' => 'logo', 'alt' => 'Leitlearn 2']) ?>
             </div>
             <div class="auth-form-body">
                 <h3 class="title"><?= __('Se connecter à Leitlearn') ?></h3>
