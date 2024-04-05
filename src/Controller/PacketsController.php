@@ -448,7 +448,7 @@ class PacketsController extends AppController
                     $valid = false;
                 }
 
-                if (!$packet->public) {
+                if ($packet->status !== 1) {
                     $valid = false;
                 }
 

@@ -13,7 +13,11 @@ $this->assign('title', $packet->name);
                     <?= $this->Html->link(
                         '<span class="material-symbols-rounded">tune</span>',
                         '/deck/settings/' . $packet->packet_uid,
-                        ['class' => 'action play-hidden', 'escapeTitle' => false],
+                        [
+                            'class' => 'action play-hidden',
+                            'title' => 'Paramètres du paquet',
+                            'escapeTitle' => false,
+                        ],
                     ) ?>
                     <?= $this->Form->postLink(
                         '<span class="material-symbols-rounded">ios_share</span>',
@@ -21,6 +25,7 @@ $this->assign('title', $packet->name);
                         [
                             'confirm' => __('Êtes-vous sûr de vouloir exporter le paquet ?'),
                             'class' => 'action play-hidden',
+                            'title' => 'Exporter le paquet en CSV',
                             'escapeTitle' => false,
                         ]
                     ) ?>
@@ -46,7 +51,7 @@ $this->assign('title', $packet->name);
 
                         <?php if (!isset($date) || ($now > $date)) : ?>
                             <?= $this->Form->postLink(
-                                'Lancer <span class="material-symbols-rounded">undo</span>',
+                                'Lancer <span class="material-symbols-rounded">start</span>',
                                 ['controller' => 'Sessions', 'action' => 'createOrRedirect', $packet->id],
                                 ['class' => 'action play btnPlay create-session-btn', 'escapeTitle' => false]
                             ) ?>
