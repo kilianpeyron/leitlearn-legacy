@@ -27,6 +27,7 @@ const aiRequestEvent = async() => {
             $(this).hide();  // Utilisez "this" pour faire référence à l'élément cliqué
             loadingEvent();
             let responses = await aiSendRequest();
+            console.log(responses);
             removeLoading();
             displayResponses(responses);
             displayActions();
