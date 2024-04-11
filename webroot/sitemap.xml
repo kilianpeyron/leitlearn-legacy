@@ -9,147 +9,137 @@
 
 <url>
   <loc>https://leitlearn.com/</loc>
-  <lastmod>2024-04-03T14:06:51+00:00</lastmod>
+  <lastmod>2024-04-11T07:12:57+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://leitlearn.com/market</loc>
-  <lastmod>2024-04-03T14:06:51+00:00</lastmod>
+  <lastmod>2024-04-11T07:12:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://leitlearn.com/home</loc>
-  <lastmod>2024-04-03T14:06:51+00:00</lastmod>
+  <lastmod>2024-04-11T07:12:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://leitlearn.com/articles/announcing-leitlearn-2</loc>
-  <lastmod>2024-04-03T14:06:51+00:00</lastmod>
+  <lastmod>2024-04-11T07:12:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://leitlearn.com/users/register</loc>
-  <lastmod>2024-04-03T14:06:51+00:00</lastmod>
+  <lastmod>2024-04-11T07:12:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://leitlearn.com/users/login</loc>
-  <lastmod>2024-04-03T14:06:51+00:00</lastmod>
+  <lastmod>2024-04-11T07:12:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://leitlearn.com/users/login?redirect=%2Flegal</loc>
-  <lastmod>2024-04-03T14:06:51+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://leitlearn.com/users/login?redirect=%2Fpages%2Fterms</loc>
-  <lastmod>2024-04-03T14:06:51+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://leitlearn.com/users/login?redirect=%2Fpages%2Fprivacy</loc>
-  <lastmod>2024-04-03T14:06:51+00:00</lastmod>
+  <loc>https://leitlearn.com/legal</loc>
+  <lastmod>2024-04-11T07:12:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://leitlearn.com/users/login?redirect=%2Fmarket%2Fscience</loc>
-  <lastmod>2024-04-03T14:06:51+00:00</lastmod>
+  <lastmod>2024-04-11T07:12:57+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://leitlearn.com/users/login?redirect=%2Fmarket%2Fmathematiques</loc>
-  <lastmod>2024-04-03T14:06:51+00:00</lastmod>
+  <loc>https://leitlearn.com/users/login?redirect=%2Fmarket%2Fmathematics</loc>
+  <lastmod>2024-04-11T07:12:57+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://leitlearn.com/users/login?redirect=%2Fmarket%2Flangues</loc>
-  <lastmod>2024-04-03T14:06:51+00:00</lastmod>
+  <loc>https://leitlearn.com/users/login?redirect=%2Fmarket%2Flanguages</loc>
+  <lastmod>2024-04-11T07:12:57+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://leitlearn.com/users/login?redirect=%2Fmarket%2Fhistoire</loc>
-  <lastmod>2024-04-03T14:06:51+00:00</lastmod>
+  <loc>https://leitlearn.com/users/login?redirect=%2Fmarket%2Fhistory</loc>
+  <lastmod>2024-04-11T07:12:57+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://leitlearn.com/users/login?redirect=%2Fmarket%2Fgeographie</loc>
-  <lastmod>2024-04-03T14:06:51+00:00</lastmod>
+  <loc>https://leitlearn.com/users/login?redirect=%2Fmarket%2Fgeography</loc>
+  <lastmod>2024-04-11T07:12:57+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://leitlearn.com/users/login?redirect=%2Fmarket%2Flitterature</loc>
-  <lastmod>2024-04-03T14:06:51+00:00</lastmod>
+  <loc>https://leitlearn.com/users/login?redirect=%2Fmarket%2Fliterature</loc>
+  <lastmod>2024-04-11T07:12:57+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://leitlearn.com/users/login?redirect=%2Fmarket%2Farts</loc>
-  <lastmod>2024-04-03T14:06:51+00:00</lastmod>
+  <lastmod>2024-04-11T07:12:57+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://leitlearn.com/users/login?redirect=%2Fmarket%2Fmusique</loc>
-  <lastmod>2024-04-03T14:06:51+00:00</lastmod>
+  <loc>https://leitlearn.com/users/login?redirect=%2Fmarket%2Fmusic</loc>
+  <lastmod>2024-04-11T07:12:57+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://leitlearn.com/users/login?redirect=%2Fmarket%2Fsociales</loc>
-  <lastmod>2024-04-03T14:06:51+00:00</lastmod>
+  <loc>https://leitlearn.com/users/login?redirect=%2Fmarket%2Fsocial%2520sciences</loc>
+  <lastmod>2024-04-11T07:12:57+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://leitlearn.com/users/login?redirect=%2Fmarket%2Fprogrammation</loc>
-  <lastmod>2024-04-03T14:06:51+00:00</lastmod>
+  <loc>https://leitlearn.com/users/login?redirect=%2Fmarket%2Fprogramming</loc>
+  <lastmod>2024-04-11T07:12:57+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://leitlearn.com/users/login?redirect=%2Fmarket%2Fpsychologie</loc>
-  <lastmod>2024-04-03T14:06:51+00:00</lastmod>
+  <loc>https://leitlearn.com/users/login?redirect=%2Fmarket%2Fpsychology</loc>
+  <lastmod>2024-04-11T07:12:57+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://leitlearn.com/users/login?redirect=%2Fmarket%2Fphilosophie</loc>
-  <lastmod>2024-04-03T14:06:51+00:00</lastmod>
+  <loc>https://leitlearn.com/users/login?redirect=%2Fmarket%2Fphilosophy</loc>
+  <lastmod>2024-04-11T07:12:57+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://leitlearn.com/users/login?redirect=%2Fmarket%2Feconomie</loc>
-  <lastmod>2024-04-03T14:06:51+00:00</lastmod>
+  <loc>https://leitlearn.com/users/login?redirect=%2Fmarket%2Feconomics</loc>
+  <lastmod>2024-04-11T07:12:57+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://leitlearn.com/users/login?redirect=%2Fmarket%2Fbiologie</loc>
-  <lastmod>2024-04-03T14:06:51+00:00</lastmod>
+  <loc>https://leitlearn.com/users/login?redirect=%2Fmarket%2Fbiology</loc>
+  <lastmod>2024-04-11T07:12:57+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://leitlearn.com/users/login?redirect=%2Fmarket%2Fchimie</loc>
-  <lastmod>2024-04-03T14:06:51+00:00</lastmod>
+  <loc>https://leitlearn.com/users/login?redirect=%2Fmarket%2Fchemistry</loc>
+  <lastmod>2024-04-11T07:12:57+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://leitlearn.com/users/login?redirect=%2Fmarket%2Fcuisine</loc>
-  <lastmod>2024-04-03T14:06:51+00:00</lastmod>
+  <loc>https://leitlearn.com/users/login?redirect=%2Fmarket%2Fcooking</loc>
+  <lastmod>2024-04-11T07:12:57+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://leitlearn.com/users/login?redirect=%2Fmarket%2Fsante</loc>
-  <lastmod>2024-04-03T14:06:51+00:00</lastmod>
+  <loc>https://leitlearn.com/users/login?redirect=%2Fmarket%2Fhealth</loc>
+  <lastmod>2024-04-11T07:12:57+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://leitlearn.com/users/login?redirect=%2Fmarket%2Fsport</loc>
-  <lastmod>2024-04-03T14:06:51+00:00</lastmod>
+  <loc>https://leitlearn.com/users/login?redirect=%2Fmarket%2Fsports</loc>
+  <lastmod>2024-04-11T07:12:57+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://leitlearn.com/users/login?redirect=%2Fmarket%2Ftechnologie</loc>
-  <lastmod>2024-04-03T14:06:51+00:00</lastmod>
+  <loc>https://leitlearn.com/users/login?redirect=%2Fmarket%2Ftechnology</loc>
+  <lastmod>2024-04-11T07:12:57+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://leitlearn.com/users/login?redirect=%2Fmarket%2Fcinema</loc>
-  <lastmod>2024-04-03T14:06:51+00:00</lastmod>
+  <lastmod>2024-04-11T07:12:57+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 
