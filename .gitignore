@@ -6,6 +6,8 @@
 /tmp/*
 /vendor/*
 
+/webroot/img/user_profile_pic/*
+
 composer.lock
 
 # OS generated files #
