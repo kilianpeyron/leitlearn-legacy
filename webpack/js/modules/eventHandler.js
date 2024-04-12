@@ -59,18 +59,18 @@ const searchEvents = () => {
     let input = document.getElementById('market_search');
     let results = document.querySelector('.search-results');
 
-    if(input) {
-        input.addEventListener('focus', function() {
+    if (input) {
+        input.addEventListener('focus', function () {
             results.classList.add('active');
         });
 
-        input.addEventListener('blur', function(event) {
+        input.addEventListener('blur', function (event) {
             if (!results.contains(event.relatedTarget)) {
                 results.classList.remove('active');
             }
         });
 
-        results.addEventListener('mousedown', function(event) {
+        results.addEventListener('mousedown', function (event) {
             event.preventDefault();
         });
     }
@@ -102,14 +102,15 @@ const tabsEventHandler = () => {
  *
  * @param {jQuery} $scrollMenu - Menu déroulant sous forme d'objet jQuery.
  */
-export function setupScrollMenu($scrollMenu) {
+export function setupScrollMenu($scrollMenu)
+{
     const $content = $scrollMenu.find('.scroll-content');
     const $prevButton = $scrollMenu.closest('.section-packets').find('.prev-button');
     const $nextButton = $scrollMenu.closest('.section-packets').find('.next-button');
     let scrollPosition = 0;
 
 
-    $prevButton.on('click', function() {
+    $prevButton.on('click', function () {
         scrollPosition -= 200; // Changer la valeur de défilement selon votre préférence
         if (scrollPosition < 0) {
             scrollPosition = 0;
@@ -117,7 +118,7 @@ export function setupScrollMenu($scrollMenu) {
         updateScrollPosition();
     });
 
-    $nextButton.on('click', function() {
+    $nextButton.on('click', function () {
         scrollPosition += 200;
         if (scrollPosition > $content[0].scrollWidth - $content[0].clientWidth) {
             scrollPosition = $content[0].scrollWidth - $content[0].clientWidth;
@@ -125,7 +126,8 @@ export function setupScrollMenu($scrollMenu) {
         updateScrollPosition();
     });
 
-    function updateScrollPosition() {
+    function updateScrollPosition()
+    {
         $content.css('transform', `translateX(-${scrollPosition}px)`);
     }
 }
@@ -134,7 +136,7 @@ export function setupScrollMenu($scrollMenu) {
 const animateFormButtons = () => {
     const LOADER_DURATION = 3000;
 
-    $(document).on('click', '.loader-button', function(event) {
+    $(document).on('click', '.loader-button', function (event) {
         event.preventDefault();
 
         const $form = $(this).closest('form');
@@ -143,7 +145,7 @@ const animateFormButtons = () => {
         const $loader = $button.find('.loader');
 
         if (validateForm($form)) {
-            $input.val('');
+            $input.val(' ');
             $loader.show();
             $form.submit();
         } else {
@@ -154,7 +156,7 @@ const animateFormButtons = () => {
     const validateForm = ($form) => {
         let isValid = true;
 
-        $form.find("[required]").each(function() {
+        $form.find("[required]").each(function () {
             if ($(this).val() === "") {
                 isValid = false;
                 return false;

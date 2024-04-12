@@ -18,9 +18,13 @@
             </li>
             <?= $this->cell('FeatureFlags::display', ['leitlearn_plus_sidebar_link']) ?>
             <?php if (!$is_logged) : ?>
-                <li class="modal-btn" data-modal="login-modal">
-                    <span class="material-symbols-rounded" style="font-variation-settings: 'FILL';">person</span>
-                </li>
+            <li>
+                <?= $this->Html->link(
+                    '<span class="material-symbols-rounded">person</span>',
+                    '/auth/login',
+                    ['escapeTitle' => false]
+                ); ?>
+            </li>
             <?php else: ?>
                 <li class="<?= $this->getRequest()->getRequestTarget() === '/dashboard' ? 'active' : '' ?>">
                     <?= $this->Html->link(

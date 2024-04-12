@@ -14,96 +14,48 @@
 
 @-webkit-keyframes leitlearn_fadein {
     from {
-        bottom: 0;
+        right: 0;
         opacity: 0;
     }
 
     to {
-        bottom: 30px;
+        right: 30px;
         opacity: 1;
     }
 }
 
 @keyframes leitlearn_fadein {
     from {
-        bottom: 0;
+        right: 0;
         opacity: 0;
     }
 
     to {
-        bottom: 30px;
+        right: 30px;
         opacity: 1;
     }
 }
 
 @-webkit-keyframes leitlearn_fadeout {
     from {
-        bottom: 30px;
+        right: 30px;
         opacity: 1;
     }
 
     to {
-        bottom: 0;
+        right: 0;
         opacity: 0;
     }
 }
 
 @keyframes leitlearn_fadeout {
     from {
-        bottom: 30px;
+        right: 30px;
         opacity: 1;
     }
 
     to {
-        bottom: 0;
-        opacity: 0;
-    }
-}
-
-@-webkit-keyframes leitlearn_fadein_responsive {
-    from {
-        bottom: 0;
-        opacity: 0;
-    }
-
-    to {
-        bottom: 80px;
-        opacity: 1;
-    }
-}
-
-@keyframes leitlearn_fadein_responsive {
-    from {
-        bottom: 0;
-        opacity: 0;
-    }
-
-    to {
-        bottom: 80px;
-        opacity: 1;
-    }
-}
-
-@-webkit-keyframes leitlearn_fadeout_responsive {
-    from {
-        bottom: 80px;
-        opacity: 1;
-    }
-
-    to {
-        bottom: 0;
-        opacity: 0;
-    }
-}
-
-@keyframes leitlearn_fadeout_responsive {
-    from {
-        bottom: 80px;
-        opacity: 1;
-    }
-
-    to {
-        bottom: 0;
+        right: 0;
         opacity: 0;
     }
 }
