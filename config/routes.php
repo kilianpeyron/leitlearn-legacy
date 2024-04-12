@@ -64,6 +64,7 @@ return function (RouteBuilder $routes): void {
 
         //Langue
         $builder->connect('/lang/change-language/*', ['controller' => 'Lang', 'action' => 'changeLanguage']);
+
         /*
          * ...and connect the rest of 'Pages' controller's URLs.
          */
@@ -151,6 +152,19 @@ return function (RouteBuilder $routes): void {
         $builder->fallbacks();
     });
 
+    /*
+ * Routes for the Leitlearn API
+ */
+    $routes->scope('/auth', function (RouteBuilder $builder): void {
+        $builder->connect(
+            '/register',
+            ['controller' => 'Users', 'action' => 'register']
+        );
+        $builder->connect(
+            '/login',
+            ['controller' => 'Users', 'action' => 'login']
+        );
+    });
 
     /*
      * Routes for the Leitlearn API

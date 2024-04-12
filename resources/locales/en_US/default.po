@@ -775,5 +775,3 @@ msgstr "Session ended!"
 
 msgid "Erreur dans le suppression de la session."
 msgstr "Error deleting session."
-
-

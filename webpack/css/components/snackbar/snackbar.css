@@ -1,13 +1,10 @@
 .snackbar {
     visibility: hidden;
     position: fixed;
-    left: 50%;
-    bottom: 30px;
-    transform: translateX(-50%);
+    top: 20px;
+    right: 30px;
     padding: 16px;
-    min-width: 350px;
-    background: var(--main-bg-color);
-    border-bottom: 2px solid #d5bf16;
+    background: white;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     z-index: 1;
@@ -21,21 +18,10 @@
 
 .snackbar span {
     display: block;
-    font-weight: 600;
-    color: black;
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--text-light-color);
     text-align: center;
-}
-
-@media screen and (max-width: 620px) {
-    .snackbar {
-        bottom: 80px;
-        min-width: 400px;
-    }
-    .snackbar.show {
-        visibility: visible;
-        -webkit-animation: leitlearn_fadein_responsive 0.5s, leitlearn_fadeout_responsive 0.5s 2.5s;
-        animation: leitlearn_fadein_responsive 0.5s, leitlearn_fadeout_responsive 0.5s 2.5s;
-    }
 }
 
 @media screen and (max-width: 440px) {

@@ -8,36 +8,19 @@ $this->assign('title', 'Connexion');
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa cum dicta dolorem doloremque earum error facere inventore ipsum itaque iure molestiae odit perspiciatis praesentium reiciendis repellendus repudiandae sequi, veniam.</p>
     </div>
     <div class="auth-form">
+        <?= $this->Form->create(null, ['url' => ['controller' => 'Users', 'action' => 'login']]) ?>
             <div class="auth-form-header">
                 <h3><?= __('Rejoignez Leitlearn') ?></h3>
-                <p><?= __('Pas de compte ? Connectez-vous') ?></p>
+                <p>
+                    <?= $this->Html->link(
+                        __('Pas de compte ? <span>Inscrivez-vous</span>'),
+                        '/users/register',
+                        ['escape' => false]
+                    ) ?>
+                </p>
             </div>
             <div class="auth-form-body">
-                <?= $this->Form->create(null, ['url' => ['controller' => 'Users', 'action' => 'login']]) ?>
-                <div class="input-group">
-                    <?= $this->Form->email('email', ['id' => 'login-page-email', 'placeholder' => '']) ?>
-                    <?= $this->Form->label('login-page-email', __('Adresse e-mail')) ?>
-                </div>
-                <div class="input-group">
-                    <?= $this->Form->password('password', ['id' => 'login-page-password', 'placeholder' => '']) ?>
-                    <?= $this->Form->label('login-page-password', __('Mot de passe')) ?>
-                </div>
-                <div class="input-group">
-                    <?= $this->Form->email('email', ['id' => 'login-page-email', 'placeholder' => '']) ?>
-                    <?= $this->Form->label('login-page-email', __('Adresse e-mail')) ?>
-                </div>
-                <div class="input-group">
-                    <?= $this->Form->password('password', ['id' => 'login-page-password', 'placeholder' => '']) ?>
-                    <?= $this->Form->label('login-page-password', __('Mot de passe')) ?>
-                </div>
-                <div class="input-group">
-                    <?= $this->Form->email('email', ['id' => 'login-page-email', 'placeholder' => '']) ?>
-                    <?= $this->Form->label('login-page-email', __('Adresse e-mail')) ?>
-                </div>
-                <div class="input-group">
-                    <?= $this->Form->password('password', ['id' => 'login-page-password', 'placeholder' => '']) ?>
-                    <?= $this->Form->label('login-page-password', __('Mot de passe')) ?>
-                </div>
+
                 <div class="input-group">
                     <?= $this->Form->email('email', ['id' => 'login-page-email', 'placeholder' => '']) ?>
                     <?= $this->Form->label('login-page-email', __('Adresse e-mail')) ?>
