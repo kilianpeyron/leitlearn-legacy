@@ -60,10 +60,6 @@
     transition: all .3s ease;
 }
 
-.sidebar ul li.active {
-    background: var(--main-bg-color);
-}
-
 .sidebar ul li:last-child {
     margin-bottom: 0;
 }
@@ -100,7 +96,7 @@
 }
 
 .sidebar ul li.active span {
-    color: black;
+    color: var(--main-bg-color);
 }
 
 @media screen and (max-width: 620px) {
