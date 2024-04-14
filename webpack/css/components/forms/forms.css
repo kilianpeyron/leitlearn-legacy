@@ -24,7 +24,7 @@ select:focus {
 }
 
 input[type=submit] {
-    color: black;
+    color: white;
     background: var(--main-bg-color);
     border: 2px solid rgba(0, 0, 0, .075);
     border-radius: 25px;

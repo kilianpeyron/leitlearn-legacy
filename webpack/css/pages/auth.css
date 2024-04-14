@@ -2,12 +2,6 @@
     background: var(--second-bg-color);
 }
 
-.auth h1,
-.auth h2,
-.auth h3 {
-    font-family: var(--font-family-secondary);
-}
-
 .fixed-logo-left {
     position: fixed;
     top: 15px;

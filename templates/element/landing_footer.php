@@ -1,6 +1,6 @@
 <footer>
     <div class="footer-content">
-        <p class="footer-desc"><?= __('C\'est le moment d\'apprendre.') ?></p>
+        <h3 class="footer-desc"><?= __('C\'est le moment d\'apprendre.') ?></h3>
         <?php if ($is_logged) : ?>
             <?= $this->Html->link(
                 '<button>' .
@@ -45,7 +45,7 @@
         <div class="separator top"></div>
         <ul class="footer-links-group">
             <ul class="footer-links">
-                <span>Pages</span>
+                <h4>Pages</h4>
                 <li class="footer-link">
                     <?= $this->Html->link(
                         __('Marché'),
@@ -70,7 +70,7 @@
             </ul>
             <?php if ($is_logged) : ?>
                 <ul class="footer-links">
-                    <span><?= __('Moi') ?></span>
+                    <h4><?= __('Moi') ?></h4>
                     <li class="footer-link">
                         <?= $this->Html->link(
                             __('Mon profil'),
@@ -102,7 +102,7 @@
                 </ul>
             <?php endif; ?>
             <ul class="footer-links">
-                <span><?= __('Aide') ?></span>
+                <h4><?= __('Aide') ?></h4>
                 <li class="footer-link">
                     <?= $this->Html->link(
                         __('Statut des serveurs'),
@@ -127,7 +127,7 @@
                 </li>
             </ul>
             <ul class="footer-links">
-                <span>Leitlearn</span>
+                <h4>Leitlearn</h4>
                 <li class="footer-link">
                     <?= $this->Html->link(
                         __('Mentions légales'),
@@ -156,6 +156,6 @@
             <?= $this->Html->image('https://static.kilianpeyron.fr/leitlearn/img/leitlearn_2_logo.webp', ['alt' => 'Leitlearn']) ?>
             &copy; 2023-2024 Leitlearn.com
         </div>
-        <div class="version">2.0 RC 3 Pre-Version</div>
+        <div class="version">2.0 RC 4 Pre-Version</div>
     </div>
 </footer>
