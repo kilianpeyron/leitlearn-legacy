@@ -6,7 +6,13 @@ namespace App\Controller;
 use App\Utility\AppSingleton;
 class DashboardController extends AppController
 {
+
     public function index()
     {
+    }
+
+    public function refresh()
+    {
+        $this->viewBuilder()->setLayout('dashboard_refresh');
     }
 }
