@@ -4,6 +4,26 @@ main.refresh {
     background: var(--second-bg-color);
 }
 
+main.refresh .new-ui {
+    position: absolute;
+    top: 5px;
+    right: 32px;
+}
+
+main.refresh .new-ui h5 {
+    margin-right: 5px;
+}
+
+main.refresh .new-ui .switch-container .switch {
+    width: 54px;
+    height: 20px;
+}
+
+main.refresh .new-ui .switch-container .switch input+span:before {
+    width: 16px;
+    height: 16px;
+}
+
 main.refresh .refresh-grid {
     height: 100vh;
     display: grid;
@@ -145,6 +165,42 @@ main.refresh .refresh-grid .grid-item .item-decks .deck .deck-name {
 
 main.refresh .refresh-grid .grid-item .item-body {
     height: 100%;
+}
+
+main.refresh .refresh-grid .grid-item .user {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+main.refresh .refresh-grid .grid-item .user .avatar {
+    width: 60px;
+    height: 60px;
+    margin-right: 15px;
+    border-radius: 50%;
+}
+
+main.refresh .refresh-grid .grid-item .actions {
+    display: flex;
+    flex-direction: column;
+}
+
+main.refresh .refresh-grid .grid-item .actions .action {
+    padding: 10px 15px;
+    text-align: center;
+    color: black;
+    font-weight: 500;
+    background: var(--second-bg-color);
+    border-radius: 25px;
+}
+
+main.refresh .refresh-grid .grid-item .actions .action:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+main.refresh .refresh-grid .grid-item .actions .action.primary {
+    background: var(--main-bg-color);
+    color: white;
 }
 
 main.refresh .refresh-grid .grid-item .go-back {
