@@ -24,7 +24,6 @@ echo $this->Html->link(
                 </p>
             </div>
             <div class="auth-form-body">
-
                 <div class="input-group">
                     <?= $this->Form->email('email', ['id' => 'login-page-email', 'placeholder' => '']) ?>
                     <?= $this->Form->label('login-page-email', __('Adresse e-mail')) ?>
