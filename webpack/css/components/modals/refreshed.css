@@ -1,0 +1,53 @@
+.modal.refreshed-modal {
+    position: absolute;
+    top: inherit;
+    bottom: -100%;
+    left: 0;
+    display: block;
+    background: transparent;
+    overflow: hidden;
+    transition: all .3s;
+}
+
+.modal.refreshed-modal.show {
+    bottom: 0;
+}
+
+.modal.refreshed-modal .modal-container {
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    border: 0;
+    animation: none;
+}
+
+.modal.refreshed-modal .modal-header {
+    padding: 0;
+    margin-bottom: 20px;
+    justify-content: flex-start;
+}
+
+.modal.refreshed-modal .modal-header .modal-close {
+    position: relative;
+    top: inherit;
+    right: inherit;
+    width: 38px;
+    height: 38px;
+    background: var(--second-bg-color);
+}
+
+.modal.refreshed-modal .modal-body,
+.modal.refreshed-modal form {
+    height: calc(100% - 120px);
+    margin: 0;
+}
+
+.modal.refreshed-modal .modal-form-submit {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 30px;
+    border-radius: 0 0 8px 8px;
+    background: white;
+}

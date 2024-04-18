@@ -17,7 +17,21 @@
     <div class="refresh-grid">
         <div class="grid-item grid-packets panel-left">
             <div class="item-header">
-                <h2>Mes paquets</h2>
+                <div class="item-flex">
+                    <h2>Mes paquets</h2>
+                    <ul class="header-actions">
+                        <li class="action active modal-btn" data-modal="create-packet">
+                            <span class="material-symbols-rounded">
+                            add
+                        </span>
+                        </li>
+                        <li class="action modal-btn" data-modal="import-packet">
+                            <span class="material-symbols-rounded">
+                            upload_file
+                        </span>
+                        </li>
+                    </ul>
+                </div>
                 <div class="filters">
                     <div class="filter active" data-filter-action="all">
                         <h5>Tous</h5>
@@ -36,6 +50,8 @@
             <div class="item-decks">
                 <?= $cell = $this->cell('Packets::display_refreshed', ['my', $user_data["id"], 'dashboard']) ?>
             </div>
+            <?= $this->element('modals/refreshed/create_packet'); ?>
+            <?= $this->element('modals/refreshed/import_packet'); ?>
         </div>
         <div class="grid-item grid-feed panel-center">
             <div class="item-header">

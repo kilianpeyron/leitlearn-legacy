@@ -75,6 +75,7 @@ main.refresh .refresh-grid .grid-item {
     padding: 30px;
     background: white;
     border-radius: 8px;
+    overflow: hidden;
 }
 
 main.refresh .refresh-grid .grid-item .item-header {
@@ -84,10 +85,36 @@ main.refresh .refresh-grid .grid-item .item-header {
     margin-bottom: 20px;
 }
 
+main.refresh .refresh-grid .grid-item .item-header .item-flex,
+main.refresh .refresh-grid .grid-item .item-header .item-flex .header-actions {
+    display: flex;
+    align-items: center;
+}
+
+main.refresh .refresh-grid .grid-item .item-header .item-flex .header-actions {
+    margin: 0 0 0 auto;
+    list-style: none;
+}
+
+main.refresh .refresh-grid .grid-item .item-header .item-flex .header-actions .action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    background: var(--second-bg-color);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+main.refresh .refresh-grid .grid-item .item-header .item-flex .header-actions .action:not(:last-child) {
+    margin-right: 10px;
+}
+
 main.refresh .refresh-grid .grid-item .filters {
     display: flex;
     align-items: center;
-    margin-top: 15px;
+    margin-top: 20px;
     width: 100%;
     overflow-x: scroll;
 }
